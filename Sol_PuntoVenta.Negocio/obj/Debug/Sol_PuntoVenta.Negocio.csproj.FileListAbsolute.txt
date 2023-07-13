@@ -1,0 +1,15 @@
+V:\C#\Sistemas\Sol_PuntoVenta\Sol_PuntoVenta.Negocio\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+V:\C#\Sistemas\Sol_PuntoVenta\Sol_PuntoVenta.Negocio\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+V:\C#\Sistemas\Sol_PuntoVenta\Sol_PuntoVenta.Negocio\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+V:\C#\Sistemas\Sol_PuntoVenta\Sol_PuntoVenta.Negocio\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+V:\C#\Sistemas\Sol_PuntoVenta\Sol_PuntoVenta.Negocio\bin\Debug\Sol_PuntoVenta.Negocio.dll
+V:\C#\Sistemas\Sol_PuntoVenta\Sol_PuntoVenta.Negocio\bin\Debug\Sol_PuntoVenta.Negocio.pdb
+V:\C#\Sistemas\Sol_PuntoVenta\Sol_PuntoVenta.Negocio\bin\Debug\Sol_PuntoVenta.Datos.dll
+V:\C#\Sistemas\Sol_PuntoVenta\Sol_PuntoVenta.Negocio\bin\Debug\Sol_PuntoVenta.Entidades.dll
+V:\C#\Sistemas\Sol_PuntoVenta\Sol_PuntoVenta.Negocio\bin\Debug\Sol_PuntoVenta.Datos.pdb
+V:\C#\Sistemas\Sol_PuntoVenta\Sol_PuntoVenta.Negocio\bin\Debug\Sol_PuntoVenta.Entidades.pdb
+V:\C#\Sistemas\Sol_PuntoVenta\Sol_PuntoVenta.Negocio\obj\Debug\Sol_PuntoVenta.Negocio.csproj.AssemblyReference.cache
+V:\C#\Sistemas\Sol_PuntoVenta\Sol_PuntoVenta.Negocio\obj\Debug\Sol_PuntoVenta.Negocio.csproj.CoreCompileInputs.cache
+V:\C#\Sistemas\Sol_PuntoVenta\Sol_PuntoVenta.Negocio\obj\Debug\Sol_PuntoVenta.Negocio.csproj.CopyComplete
+V:\C#\Sistemas\Sol_PuntoVenta\Sol_PuntoVenta.Negocio\obj\Debug\Sol_PuntoVenta.Negocio.dll
+V:\C#\Sistemas\Sol_PuntoVenta\Sol_PuntoVenta.Negocio\obj\Debug\Sol_PuntoVenta.Negocio.pdb
