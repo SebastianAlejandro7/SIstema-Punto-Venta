@@ -31,8 +31,8 @@ namespace Sol_PuntoVenta.Presentacion
             Dgv_Listado.Columns[0].HeaderText = "CODIGO_AD";
             Dgv_Listado.Columns[1].Width = 250;
             Dgv_Listado.Columns[1].HeaderText = "ÁREA DE DESPACHO";
-            //Dgv_Listado.Columns[2].Width = 250;
-            //Dgv_Listado.Columns[2].HeaderText = "IMPRESORA";
+            Dgv_Listado.Columns[2].Width = 250;
+            Dgv_Listado.Columns[2].HeaderText = "IMPRESORA";
         }
 
         private void Listado_ad(string cTexto)
@@ -137,7 +137,7 @@ namespace Sol_PuntoVenta.Presentacion
                     string Rpta = "";
                     E_Area_Despacho oPrpiedad = new E_Area_Despacho();
                     oPrpiedad.Codigo_ad = this.nCodigo;
-                    oPrpiedad.Descipcion_ad = Txt_descripcion.Text.Trim();
+                    oPrpiedad.Descripcion_ad = Txt_descripcion.Text.Trim();
                     oPrpiedad.Impresora = Txt_impresora.Text.Trim();
                     Rpta = N_Area_Despacho.Guardar_ad(this.Estadoguarda, oPrpiedad);
                     if (Rpta.Equals("OK"))

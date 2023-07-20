@@ -42,32 +42,33 @@ namespace Sol_PuntoVenta.Presentacion
             Dgv_1.Columns[0].Visible = false;
             Dgv_1.Columns[1].Width = 417;
             Dgv_1.Columns[1].HeaderText = "PUNTO DE VENTA";
-
-        }
-
-        private void Listado_pv(string cTexto)
-        {
-            try
-            {
-                Dgv_Listado.DataSource = N_Mesas.Listado_pv(cTexto); // Mediacion del contenido
-                this.Formato_pv();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message + ex.StackTrace);
-            }
         }
 
         private void Listado_me(string cTexto)
         {
             try
             {
-                Dgv_1.DataSource = N_Mesas.Listado_me(cTexto); // Mediacion del contenido
+                Dgv_Listado.DataSource = N_Mesas.Listado_me(cTexto);
                 this.Formato_me();
-                Lbl_totalregistros.Text = "Total registros: " + Convert.ToString(Dgv_Listado.Rows.Count); //Dgv contiene los registros, porque ya recibio la informacion
+                Lbl_totalregistros.Text = "Total registros: " + Convert.ToString(Dgv_Listado.Rows.Count);
             }
             catch (Exception ex)
             {
+
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void Listado_pv(string cTexto)
+        {
+            try
+            {
+                Dgv_1.DataSource = N_Mesas.Listado_pv(cTexto);
+                this.Formato_pv();
+            }
+            catch (Exception ex)
+            {
+
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
         }
@@ -109,10 +110,10 @@ namespace Sol_PuntoVenta.Presentacion
             }
             else
             {
-                this.nCodigo = Convert.ToInt32(Dgv_Listado.CurrentRow.Cells["Codigo_me"].Value); // Convierte entero porque la variable es de tipo entero y se envia al sql si o si tipo entero
+                this.nCodigo = Convert.ToInt32(Dgv_Listado.CurrentRow.Cells["codigo_me"].Value); // Convierte entero porque la variable es de tipo entero y se envia al sql si o si tipo entero
                 Txt_descripcion.Text = Convert.ToString(Dgv_Listado.CurrentRow.Cells["descripcion_me"].Value);
                 Txt_punto_venta.Text = Convert.ToString(Dgv_Listado.CurrentRow.Cells["descripcion_pv"].Value);
-                this.nCodigo_pv = Convert.ToInt32(Dgv_Listado.CurrentRow.Cells["Codigo_pv"].Value);
+                this.nCodigo_pv = Convert.ToInt32(Dgv_Listado.CurrentRow.Cells["codigo_pv"].Value);
             }
         }
         private void Selecciona_item_pv()
@@ -124,7 +125,7 @@ namespace Sol_PuntoVenta.Presentacion
             else
             {
                 Txt_punto_venta.Text = Convert.ToString(Dgv_1.CurrentRow.Cells["descripcion_pv"].Value);
-                this.nCodigo_pv = Convert.ToInt32(Dgv_1.CurrentRow.Cells["Codigo_fa"].Value);
+                this.nCodigo_pv = Convert.ToInt32(Dgv_1.CurrentRow.Cells["codigo_pv"].Value);
             }
         }
 
@@ -351,14 +352,14 @@ namespace Sol_PuntoVenta.Presentacion
 
         private void Btn_actualizar_Click_1(object sender, EventArgs e)
         {
-                //this.Estadoguarda = 2; // Actualiza registro
-                //this.Estado_BotonesPrincipales(false);
-                //this.Estado_BotonesProcesos(true);
-                //this.Estado_Texto(true);
-                //this.Limpia_Texto();
-                //this.Selecciona_item();
-                //Tbc_principal.SelectedIndex = 1;
-                //Txt_descripcion.Focus();
+            this.Estadoguarda = 2; // Actualiza registro
+            this.Estado_BotonesPrincipales(false);
+            this.Estado_BotonesProcesos(true);
+            this.Estado_Texto(true);
+            this.Limpia_Texto();
+            this.Selecciona_item();
+            Tbc_principal.SelectedIndex = 1;
+            Txt_descripcion.Focus();
         }
 
         private void Btn_cancelar_Click_1(object sender, EventArgs e)
@@ -419,6 +420,30 @@ namespace Sol_PuntoVenta.Presentacion
             {
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
+        }
+
+        private void Btn_lupa1_Click(object sender, EventArgs e)
+        {
+            Pnl_Listado_1.Location = Btn_lupa1.Location;
+            Pnl_Listado_1.Visible = true;
+            Txt_buscar1.Focus();
+        }
+
+        private void Btn_buscar1_Click_1(object sender, EventArgs e)
+        {
+            this.Listado_pv(Txt_buscar1.Text.Trim());
+        }
+
+        private void Btn_retornar1_Click_1(object sender, EventArgs e)
+        {
+            Pnl_Listado_1.Visible = false;
+        }
+
+        private void Dgv_1_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            this.Selecciona_item_pv();
+            Pnl_Listado_1.Visible = false;
+            Txt_descripcion.Focus();
         }
     }
 }

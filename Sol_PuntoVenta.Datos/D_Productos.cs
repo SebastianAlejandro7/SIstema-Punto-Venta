@@ -48,7 +48,7 @@ namespace Sol_PuntoVenta.Datos
                 Comando.CommandType = CommandType.StoredProcedure;
                 Comando.Parameters.Add("@nOpcion", SqlDbType.Int).Value = nOpcion;
                 Comando.Parameters.Add("@nCodigo", SqlDbType.Int).Value = oPropiedad.Codigo_pr;
-                Comando.Parameters.Add("@@cDescripcion_pr", SqlDbType.VarChar).Value = oPropiedad.Descripcion_pr;
+                Comando.Parameters.Add("@cDescripcion_pr", SqlDbType.VarChar).Value = oPropiedad.Descripcion_pr;
                 Comando.Parameters.Add("@nCodigo_ma", SqlDbType.Int).Value = oPropiedad.Codigo_ma;
                 Comando.Parameters.Add("@nCodigo_um", SqlDbType.Int).Value = oPropiedad.Codigo_um;
                 Comando.Parameters.Add("@nCodigo_sf", SqlDbType.Int).Value = oPropiedad.Codigo_sf;
@@ -250,6 +250,31 @@ namespace Sol_PuntoVenta.Datos
                 if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
             }
         }
-
+        public byte[] Mostrar_img_prod_pred()
+        {
+            Byte[] bImagen = new byte[0];
+            SqlDataReader Resultado;
+            DataTable Tabla = new DataTable();
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                SqlCon = Conexion.getInstancia().CrearConexion();
+                SqlCommand Comando = new SqlCommand("Mostrar_img_prod_pred", SqlCon);
+                Comando.CommandType = CommandType.StoredProcedure;
+                SqlCon.Open();
+                Resultado = Comando.ExecuteReader();
+                Tabla.Load(Resultado);
+                bImagen = (byte[])Tabla.Rows[0][0];
+                return bImagen;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally // una vez llega a destino la informacion, se cierra sql
+            {
+                if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
+            }
+        }
     }
 }

@@ -9,7 +9,7 @@ namespace Sol_PuntoVenta.Entidades
     public class E_Area_Despacho
     {
         public int Codigo_ad { get; set; }
-        public string Descipcion_ad { get; set; }
+        public string Descripcion_ad { get; set; }
         public string Impresora { get; set; }
     }
 }

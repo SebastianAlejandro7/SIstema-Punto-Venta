@@ -123,7 +123,7 @@ namespace Sol_PuntoVenta.Presentacion
         {
             try
             {
-                if (Txt_descripcion.Text == string.Empty)
+                if (Txt_descripcion.Text == String.Empty)
                 {
                     MessageBox.Show("Falta ingresar datos requeridos(*)", "Aviso del sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }

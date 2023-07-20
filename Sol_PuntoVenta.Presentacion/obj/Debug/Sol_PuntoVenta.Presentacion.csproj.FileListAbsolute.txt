@@ -81,3 +81,7 @@ V:\C#\Sistemas\Sol_PuntoVenta\Sol_PuntoVenta.Presentacion\obj\Debug\Sol_PuntoVen
 V:\C#\Sistemas\Sol_PuntoVenta\Sol_PuntoVenta.Presentacion\obj\Debug\Sol_PuntoVenta.Presentacion.Frm_Area_Despacho.resources
 V:\C#\Sistemas\Sol_PuntoVenta\Sol_PuntoVenta.Presentacion\obj\Debug\Sol_PuntoVenta.Presentacion.Reportes.Frm_Rpt_Area_Despacho.resources
 V:\C#\Sistemas\Sol_PuntoVenta\Sol_PuntoVenta.Presentacion\obj\Debug\Sol_PuntoVenta.Presentacion.Frm_Productos.resources
+V:\C#\Sistemas\Sol_PuntoVenta\Sol_PuntoVenta.Presentacion\obj\Debug\Sol_PuntoVenta.Presentacion.Reportes.Frm_Rpt_Productos.resources
+V:\C#\Sistemas\Sol_PuntoVenta\Sol_PuntoVenta.Presentacion\obj\Debug\Sol_PuntoVenta.Presentacion.Frm_DashBoard.resources
+V:\C#\Sistemas\Sol_PuntoVenta\Sol_PuntoVenta.Presentacion\bin\Debug\FontAwesome.Sharp.dll
+V:\C#\Sistemas\Sol_PuntoVenta\Sol_PuntoVenta.Presentacion\obj\Debug\Sol_PuntoVenta.Presentacion.Procesos.Frm_Registro_Pedidos.resources

@@ -48,8 +48,8 @@ namespace Sol_PuntoVenta.Datos
                 Comando.CommandType = CommandType.StoredProcedure;
                 Comando.Parameters.Add("@nOpcion", SqlDbType.Int).Value = nOpcion;
                 Comando.Parameters.Add("@nCodigo", SqlDbType.Int).Value = oPropiedad.Codigo_ad;
-                Comando.Parameters.Add("@cDescripcion", SqlDbType.VarChar).Value = oPropiedad.Descipcion_ad;
-                Comando.Parameters.Add("@cDescripcion", SqlDbType.VarChar).Value = oPropiedad.Impresora;
+                Comando.Parameters.Add("@cDescripcion", SqlDbType.VarChar).Value = oPropiedad.Descripcion_ad;
+                Comando.Parameters.Add("@cImpresora", SqlDbType.VarChar).Value = oPropiedad.Impresora;
                 SqlCon.Open();
                 Rpta = Comando.ExecuteNonQuery() >= 1 ? "OK" : "No se pudo ingresar el registro";
             }

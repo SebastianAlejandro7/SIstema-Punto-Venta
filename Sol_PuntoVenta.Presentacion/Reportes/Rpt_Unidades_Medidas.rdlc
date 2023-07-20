@@ -363,8 +363,8 @@
           <DataField>codigo_um</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="descipcion_um">
-          <DataField>descipcion_um</DataField>
+        <Field Name="descripcion_um">
+          <DataField>descripcion_um</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
