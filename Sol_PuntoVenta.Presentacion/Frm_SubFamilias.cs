@@ -227,10 +227,6 @@ namespace Sol_PuntoVenta.Presentacion
                 Tbc_principal.SelectedIndex = 1;
             }
         }
-        ///
-        private void Dgv_Listado_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-        }
 
         private void Btn_eliminar_Click(object sender, EventArgs e)
         {

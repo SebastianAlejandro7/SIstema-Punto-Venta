@@ -24,10 +24,10 @@ namespace Sol_PuntoVenta.Negocio
             return Datos.Guardar_me(nOpcion, oPropiedad); //nOpcion si es para un registro o escenario de actualizacion
         }
 
-        public static string Eliminar_me(int Ncodigo)
+        public static string Eliminar_me(int nCodigo)
         {
             D_Mesas Datos = new D_Mesas();
-            return Datos.Eliminar_me(Ncodigo);
+            return Datos.Eliminar_me(nCodigo);
         }
         public static DataTable Listado_pv(string cTexto)
         {

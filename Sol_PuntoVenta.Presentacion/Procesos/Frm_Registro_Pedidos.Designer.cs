@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Registro_Pedidos));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Pnl_titulo_form = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.Pnl_superior = new System.Windows.Forms.Panel();
@@ -108,7 +108,7 @@
             this.Pnl_Listado_1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.Pnl_Listado_1.Controls.Add(this.Btn_retornar1);
             this.Pnl_Listado_1.Controls.Add(this.Dgv_1);
-            this.Pnl_Listado_1.Location = new System.Drawing.Point(238, 0);
+            this.Pnl_Listado_1.Location = new System.Drawing.Point(249, 62);
             this.Pnl_Listado_1.Name = "Pnl_Listado_1";
             this.Pnl_Listado_1.Size = new System.Drawing.Size(386, 146);
             this.Pnl_Listado_1.TabIndex = 15;
@@ -131,18 +131,18 @@
             this.Dgv_1.AllowUserToAddRows = false;
             this.Dgv_1.AllowUserToDeleteRows = false;
             this.Dgv_1.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
-            this.Dgv_1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.Dgv_1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.Dgv_1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(145)))), ((int)(((byte)(194)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Dgv_1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(145)))), ((int)(((byte)(194)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dgv_1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.Dgv_1.ColumnHeadersHeight = 35;
             this.Dgv_1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.Dgv_1.EnableHeadersVisualStyles = false;
@@ -179,12 +179,12 @@
             // 
             // Txt_estado
             // 
-            this.Txt_estado.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_estado.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_estado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Txt_estado.Location = new System.Drawing.Point(630, 48);
             this.Txt_estado.Name = "Txt_estado";
             this.Txt_estado.ReadOnly = true;
-            this.Txt_estado.Size = new System.Drawing.Size(141, 26);
+            this.Txt_estado.Size = new System.Drawing.Size(141, 22);
             this.Txt_estado.TabIndex = 12;
             this.Txt_estado.Text = "Estado X";
             this.Txt_estado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -202,12 +202,12 @@
             // 
             // Txt_turno
             // 
-            this.Txt_turno.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_turno.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_turno.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Txt_turno.Location = new System.Drawing.Point(462, 48);
             this.Txt_turno.Name = "Txt_turno";
             this.Txt_turno.ReadOnly = true;
-            this.Txt_turno.Size = new System.Drawing.Size(141, 26);
+            this.Txt_turno.Size = new System.Drawing.Size(141, 22);
             this.Txt_turno.TabIndex = 10;
             this.Txt_turno.Text = "Turno X";
             this.Txt_turno.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -225,12 +225,12 @@
             // 
             // Txt_fechatrabajo
             // 
-            this.Txt_fechatrabajo.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_fechatrabajo.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_fechatrabajo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Txt_fechatrabajo.Location = new System.Drawing.Point(261, 48);
             this.Txt_fechatrabajo.Name = "Txt_fechatrabajo";
             this.Txt_fechatrabajo.ReadOnly = true;
-            this.Txt_fechatrabajo.Size = new System.Drawing.Size(175, 26);
+            this.Txt_fechatrabajo.Size = new System.Drawing.Size(175, 22);
             this.Txt_fechatrabajo.TabIndex = 8;
             this.Txt_fechatrabajo.Text = "Fecha de trabajo X";
             this.Txt_fechatrabajo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -241,7 +241,7 @@
             this.Btn_lupa1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(246)))), ((int)(((byte)(245)))));
             this.Btn_lupa1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_lupa1.Image = ((System.Drawing.Image)(resources.GetObject("Btn_lupa1.Image")));
-            this.Btn_lupa1.Location = new System.Drawing.Point(194, 44);
+            this.Btn_lupa1.Location = new System.Drawing.Point(194, 41);
             this.Btn_lupa1.Name = "Btn_lupa1";
             this.Btn_lupa1.Size = new System.Drawing.Size(38, 34);
             this.Btn_lupa1.TabIndex = 7;
@@ -278,12 +278,12 @@
             // 
             // Txt_puntoventa
             // 
-            this.Txt_puntoventa.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_puntoventa.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txt_puntoventa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Txt_puntoventa.Location = new System.Drawing.Point(12, 48);
             this.Txt_puntoventa.Name = "Txt_puntoventa";
             this.Txt_puntoventa.ReadOnly = true;
-            this.Txt_puntoventa.Size = new System.Drawing.Size(176, 27);
+            this.Txt_puntoventa.Size = new System.Drawing.Size(176, 22);
             this.Txt_puntoventa.TabIndex = 1;
             this.Txt_puntoventa.Text = "Punto de venta X";
             this.Txt_puntoventa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -322,11 +322,12 @@
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.White;
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 220);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(984, 380);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(984, 465);
             this.flowLayoutPanel1.TabIndex = 8;
             // 
             // timer1

@@ -166,7 +166,7 @@ namespace Sol_PuntoVenta.Presentacion
         //{
         //    try
         //    {
-        //        if (Txt_descripcion.Text == string.Empty || Txt_punto_venta.Text == string.Empty)
+        //        if (Txt_descripcion.Text == String.Empty || Txt_punto_venta.Text == string.Empty)
         //        {
         //            MessageBox.Show("Falta ingresar datos requeridos(*)", "Aviso del sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         //        }
@@ -249,20 +249,20 @@ namespace Sol_PuntoVenta.Presentacion
             }
         }
 
-        private void Btn_buscar_Click(object sender, EventArgs e)
-        {
-            this.Listado_me(Txt_buscar.Text.Trim());
-        }
+        //private void Btn_buscar_Click(object sender, EventArgs e)
+        //{
+        //    this.Listado_me(Txt_buscar.Text.Trim());
+        //}
 
-        private void Btn_reporte_Click(object sender, EventArgs e)
-        {
-            //if (Dgv_Listado.Rows.Count > 0)
-            //{
-            //    Reportes.Frm_Rpt_SubFamilias oRpt_sf = new Reportes.Frm_Rpt_SubFamilias();
-            //    oRpt_sf.Txt_p1.Text = Txt_buscar.Text.Trim();
-            //    oRpt_sf.ShowDialog();
-            //}
-        }
+        //private void Btn_reporte_Click(object sender, EventArgs e)
+        //{
+        //    if (Dgv_Listado.Rows.Count > 0)
+        //    {
+        //        Reportes.Frm_Rpt_SubFamilias oRpt_sf = new Reportes.Frm_Rpt_SubFamilias();
+        //        oRpt_sf.Txt_p1.Text = Txt_buscar.Text.Trim();
+        //        oRpt_sf.ShowDialog();
+        //    }
+        //}
 
         private void tabPage2_Click(object sender, EventArgs e)
         {
@@ -295,7 +295,7 @@ namespace Sol_PuntoVenta.Presentacion
 
         private void Btn_buscar1_Click(object sender, EventArgs e)
         {
-            this.Listado_pv(Txt_buscar1.Text.Trim());
+            this.Listado_me(Txt_buscar1.Text.Trim());
         }
 
         private void Btn_salir_Click_1(object sender, EventArgs e)
@@ -307,7 +307,7 @@ namespace Sol_PuntoVenta.Presentacion
         {
             if (Dgv_Listado.Rows.Count > 0)
             {
-                Reportes.Frm_Rpt_Area_Despacho oRpt_ad = new Reportes.Frm_Rpt_Area_Despacho();
+                Reportes.Frm_Rpt_Mesas oRpt_ad = new Reportes.Frm_Rpt_Mesas();
                 oRpt_ad.Txt_p1.Text = Txt_buscar.Text.Trim();
                 oRpt_ad.ShowDialog();
             }
@@ -352,14 +352,17 @@ namespace Sol_PuntoVenta.Presentacion
 
         private void Btn_actualizar_Click_1(object sender, EventArgs e)
         {
-            this.Estadoguarda = 2; // Actualiza registro
-            this.Estado_BotonesPrincipales(false);
-            this.Estado_BotonesProcesos(true);
-            this.Estado_Texto(true);
-            this.Limpia_Texto();
-            this.Selecciona_item();
-            Tbc_principal.SelectedIndex = 1;
-            Txt_descripcion.Focus();
+            if (Dgv_Listado.Rows.Count > 0)
+            {
+                this.Estadoguarda = 2; // Actualiza registro
+                this.Estado_BotonesPrincipales(false);
+                this.Estado_BotonesProcesos(true);
+                this.Estado_Texto(true);
+                this.Limpia_Texto();
+                this.Selecciona_item();
+                Tbc_principal.SelectedIndex = 1;
+                Btn_lupa1.Focus();
+            }
         }
 
         private void Btn_cancelar_Click_1(object sender, EventArgs e)
@@ -434,16 +437,70 @@ namespace Sol_PuntoVenta.Presentacion
             this.Listado_pv(Txt_buscar1.Text.Trim());
         }
 
-        private void Btn_retornar1_Click_1(object sender, EventArgs e)
-        {
-            Pnl_Listado_1.Visible = false;
-        }
+        //private void Btn_retornar1_Click_1(object sender, EventArgs e)
+        //{
+        //    Pnl_Listado_1.Visible = false;
+        //}
 
         private void Dgv_1_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
         {
             this.Selecciona_item_pv();
             Pnl_Listado_1.Visible = false;
             Txt_descripcion.Focus();
+        }
+
+        private void Btn_lupa1_Click_1(object sender, EventArgs e)
+        {
+            Pnl_Listado_1.Location = Btn_lupa1.Location;
+            Pnl_Listado_1.Visible = true;
+            Txt_buscar1.Focus();
+        }
+
+        private void Btn_buscar1_Click_2(object sender, EventArgs e)
+        {
+            this.Listado_pv(Txt_buscar1.Text.Trim());
+        }
+
+        private void Btn_retornar1_Click_2(object sender, EventArgs e)
+        {
+            Pnl_Listado_1.Visible = false;
+        }
+
+        private void Dgv_Listado_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (this.Estadoguarda == 0)
+            {
+                this.Selecciona_item();
+                this.Estado_BotonesProcesos(false);
+                Tbc_principal.SelectedIndex = 1;
+            }
+        }
+
+        private void Dgv_1_CellDoubleClick_2(object sender, DataGridViewCellEventArgs e)
+        {
+            this.Selecciona_item_pv();
+            Pnl_Listado_1.Visible = false;
+            Txt_descripcion.Focus();
+        }
+
+        private void Btn_buscar_Click(object sender, EventArgs e)
+        {
+            this.Listado_me(Txt_buscar.Text.Trim());
+        }
+
+        private void Btn_retornar_Click(object sender, EventArgs e)
+        {
+            Tbc_principal.SelectedIndex = 0;
+        }
+
+        private void Dgv_Listado_CellDoubleClick_2(object sender, DataGridViewCellEventArgs e)
+        {
+            if (this.Estadoguarda == 0)
+            {
+                this.Selecciona_item();
+                this.Estado_BotonesProcesos(false);
+                Tbc_principal.SelectedIndex = 1;
+            }
         }
     }
 }

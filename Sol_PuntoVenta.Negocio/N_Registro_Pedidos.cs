@@ -28,5 +28,12 @@ namespace Sol_PuntoVenta.Negocio
             D_Registro_Pedidos Datos = new D_Registro_Pedidos(); // Instanciamos la capa de datos y cargamos a una variable
             return Datos.Mostrar_me_rp(nCodigo_pv); // Con esa variable se comunica directamente con Listado_pv de (Sol_PuntoVenta.Datos)
         }
+
+        public static byte[] Imagen_estado_me(int nEstado)
+        {
+            D_Registro_Pedidos Datos = new D_Registro_Pedidos();
+            return Datos.Imagen_estado_me(nEstado);
+        }
+
     }
 }

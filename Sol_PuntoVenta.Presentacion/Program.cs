@@ -19,6 +19,8 @@ namespace Sol_PuntoVenta.Presentacion
             Application.Run(new Frm_DashBoard());
             // REVISAR UNIDADES MEDIDAS, (guardar/crear)
             // Area despacho (crud)
+            //Forms fuera de margen, (no visualizado) %Marcas, Unidad de medida, %subfamilia, %familia, %punto venta, %mesas, %area despacho
+            
         }
     }
 }

@@ -49,7 +49,7 @@
             this.Btn_reportes = new FontAwesome.Sharp.IconButton();
             this.Pnl_procesos = new System.Windows.Forms.Panel();
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.PR_gestionturnos = new FontAwesome.Sharp.IconButton();
             this.PR_registrarpedido = new FontAwesome.Sharp.IconButton();
             this.Btn_procesos = new FontAwesome.Sharp.IconButton();
             this.Btn_Dashboard = new FontAwesome.Sharp.IconButton();
@@ -456,7 +456,7 @@
             // 
             this.Pnl_procesos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(193)))), ((int)(((byte)(211)))));
             this.Pnl_procesos.Controls.Add(this.iconButton3);
-            this.Pnl_procesos.Controls.Add(this.iconButton2);
+            this.Pnl_procesos.Controls.Add(this.PR_gestionturnos);
             this.Pnl_procesos.Controls.Add(this.PR_registrarpedido);
             this.Pnl_procesos.Dock = System.Windows.Forms.DockStyle.Top;
             this.Pnl_procesos.Location = new System.Drawing.Point(0, 253);
@@ -487,27 +487,28 @@
             this.iconButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton3.UseVisualStyleBackColor = true;
             // 
-            // iconButton2
+            // PR_gestionturnos
             // 
-            this.iconButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton2.FlatAppearance.BorderSize = 0;
-            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton2.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton2.ForeColor = System.Drawing.Color.White;
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.SquareCaretRight;
-            this.iconButton2.IconColor = System.Drawing.Color.White;
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.IconSize = 32;
-            this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton2.Location = new System.Drawing.Point(0, 44);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.iconButton2.Size = new System.Drawing.Size(213, 44);
-            this.iconButton2.TabIndex = 3;
-            this.iconButton2.Text = "opción 2";
-            this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton2.UseVisualStyleBackColor = true;
+            this.PR_gestionturnos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PR_gestionturnos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PR_gestionturnos.FlatAppearance.BorderSize = 0;
+            this.PR_gestionturnos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PR_gestionturnos.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PR_gestionturnos.ForeColor = System.Drawing.Color.White;
+            this.PR_gestionturnos.IconChar = FontAwesome.Sharp.IconChar.SquareCaretRight;
+            this.PR_gestionturnos.IconColor = System.Drawing.Color.White;
+            this.PR_gestionturnos.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.PR_gestionturnos.IconSize = 32;
+            this.PR_gestionturnos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.PR_gestionturnos.Location = new System.Drawing.Point(0, 44);
+            this.PR_gestionturnos.Name = "PR_gestionturnos";
+            this.PR_gestionturnos.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.PR_gestionturnos.Size = new System.Drawing.Size(213, 44);
+            this.PR_gestionturnos.TabIndex = 3;
+            this.PR_gestionturnos.Text = "Gestión de Turnos";
+            this.PR_gestionturnos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.PR_gestionturnos.UseVisualStyleBackColor = true;
+            this.PR_gestionturnos.Click += new System.EventHandler(this.PR_gestionturnos_Click);
             // 
             // PR_registrarpedido
             // 
@@ -754,6 +755,7 @@
             // 
             // Pnl_contenido
             // 
+            this.Pnl_contenido.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.Pnl_contenido.Controls.Add(this.Pnl_logosistema);
             this.Pnl_contenido.Location = new System.Drawing.Point(230, 75);
             this.Pnl_contenido.Name = "Pnl_contenido";
@@ -762,17 +764,18 @@
             // 
             // Pnl_logosistema
             // 
+            this.Pnl_logosistema.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Pnl_logosistema.Controls.Add(this.label3);
             this.Pnl_logosistema.Controls.Add(this.pictureBox1);
             this.Pnl_logosistema.Controls.Add(this.label2);
-            this.Pnl_logosistema.Location = new System.Drawing.Point(262, 90);
+            this.Pnl_logosistema.Location = new System.Drawing.Point(264, 134);
             this.Pnl_logosistema.Name = "Pnl_logosistema";
             this.Pnl_logosistema.Size = new System.Drawing.Size(527, 259);
             this.Pnl_logosistema.TabIndex = 0;
             // 
             // label3
             // 
-            this.label3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(105)))), ((int)(((byte)(141)))));
             this.label3.Location = new System.Drawing.Point(0, 213);
@@ -784,8 +787,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(179, 40);
             this.pictureBox1.Name = "pictureBox1";
@@ -796,7 +798,7 @@
             // 
             // label2
             // 
-            this.label2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(105)))), ((int)(((byte)(141)))));
             this.label2.Location = new System.Drawing.Point(0, 236);
@@ -823,6 +825,7 @@
             this.Name = "Frm_DashBoard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_DashBoard";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Pnl_menu.ResumeLayout(false);
             this.Pnl_datosmaestros.ResumeLayout(false);
             this.Pnl_reportes.ResumeLayout(false);
@@ -853,7 +856,7 @@
         private System.Windows.Forms.Panel Pnl_procesos;
         private FontAwesome.Sharp.IconButton PR_registrarpedido;
         private FontAwesome.Sharp.IconButton iconButton3;
-        private FontAwesome.Sharp.IconButton iconButton2;
+        private FontAwesome.Sharp.IconButton PR_gestionturnos;
         private FontAwesome.Sharp.IconButton Btn_reportes;
         private System.Windows.Forms.Panel Pnl_datosmaestros;
         private FontAwesome.Sharp.IconButton DM_medidas;
