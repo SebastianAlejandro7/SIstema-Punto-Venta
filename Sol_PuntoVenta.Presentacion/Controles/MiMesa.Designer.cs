@@ -37,10 +37,10 @@
             this.Lbl_codigo_me = new System.Windows.Forms.Label();
             this.Lbl_descripcion_me = new System.Windows.Forms.Label();
             this.Pct_estado = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Pct_imagenmesa = new System.Windows.Forms.PictureBox();
             this.Pnl_mesa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Pct_estado)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pct_imagenmesa)).BeginInit();
             this.SuspendLayout();
             // 
             // Pnl_mesa
@@ -52,7 +52,7 @@
             this.Pnl_mesa.Controls.Add(this.Lbl_codigo_me);
             this.Pnl_mesa.Controls.Add(this.Lbl_descripcion_me);
             this.Pnl_mesa.Controls.Add(this.Pct_estado);
-            this.Pnl_mesa.Controls.Add(this.pictureBox1);
+            this.Pnl_mesa.Controls.Add(this.Pct_imagenmesa);
             this.Pnl_mesa.Location = new System.Drawing.Point(3, 3);
             this.Pnl_mesa.Name = "Pnl_mesa";
             this.Pnl_mesa.Size = new System.Drawing.Size(125, 131);
@@ -122,16 +122,17 @@
             this.Pct_estado.TabIndex = 1;
             this.Pct_estado.TabStop = false;
             // 
-            // pictureBox1
+            // Pct_imagenmesa
             // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(18, 23);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(88, 84);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.Pct_imagenmesa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Pct_imagenmesa.Image = ((System.Drawing.Image)(resources.GetObject("Pct_imagenmesa.Image")));
+            this.Pct_imagenmesa.Location = new System.Drawing.Point(18, 23);
+            this.Pct_imagenmesa.Name = "Pct_imagenmesa";
+            this.Pct_imagenmesa.Size = new System.Drawing.Size(88, 84);
+            this.Pct_imagenmesa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Pct_imagenmesa.TabIndex = 0;
+            this.Pct_imagenmesa.TabStop = false;
+            this.Pct_imagenmesa.Click += new System.EventHandler(this.Pct_imagenmesa_Click);
             // 
             // MiMesa
             // 
@@ -142,7 +143,7 @@
             this.Size = new System.Drawing.Size(131, 137);
             this.Pnl_mesa.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Pct_estado)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pct_imagenmesa)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -151,7 +152,7 @@
 
         private System.Windows.Forms.Panel Pnl_mesa;
         private System.Windows.Forms.PictureBox Pct_estado;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox Pct_imagenmesa;
         private System.Windows.Forms.Label Lbl_descripcion_me;
         private System.Windows.Forms.Label Lbl_codigo_me;
         private System.Windows.Forms.Label Lbl_codigo_us;

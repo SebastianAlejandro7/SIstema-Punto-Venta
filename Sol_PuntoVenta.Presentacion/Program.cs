@@ -20,6 +20,7 @@ namespace Sol_PuntoVenta.Presentacion
             // REVISAR UNIDADES MEDIDAS, (guardar/crear)
             // Area despacho (crud)
             //Forms fuera de margen, (no visualizado) %Marcas, Unidad de medida, %subfamilia, %familia, %punto venta, %mesas, %area despacho
+            //Subfamilia (no agrega producto)
             
         }
     }

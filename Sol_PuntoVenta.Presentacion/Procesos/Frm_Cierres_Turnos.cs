@@ -163,5 +163,34 @@ namespace Sol_PuntoVenta.Presentacion.Procesos
                 MessageBox.Show("No se tiene datos del punto de Venta que se intenta aperturar", "Aviso del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
+
+        private void Btn_cerrarturno_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult Opcion;
+                Opcion = MessageBox.Show("¿Cerrar el turno ahora?", "Aviso del sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (Opcion == DialogResult.Yes)
+                {
+                    string Rpta;
+                    string cFecha_ct = Txt_fecha_trabajo.Text.Trim();
+                    Rpta = N_Cierres_Turnos.Cerrar_turnos(cFecha_ct,this.nCodigo_pv,this.nCodigo_tu);
+                    if (Rpta.Equals("OK"))
+                    {
+                        this.Estado_gestion_turno_pv(this.nCodigo_pv);
+                        MessageBox.Show("El turno ha sido cerrado correctamente", "Aviso del sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                    else
+                    {
+                        MessageBox.Show(Rpta, "Aviso del sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace, "Aviso del sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

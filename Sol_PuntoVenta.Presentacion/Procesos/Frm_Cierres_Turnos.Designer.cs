@@ -134,7 +134,7 @@
             this.Btn_cerrarturno.TabIndex = 24;
             this.Btn_cerrarturno.Text = "Cerrar turno";
             this.Btn_cerrarturno.UseVisualStyleBackColor = false;
-            this.Btn_cerrarturno.Click += new System.EventHandler(this.Btn_abrirturno_Click);
+            this.Btn_cerrarturno.Click += new System.EventHandler(this.Btn_cerrarturno_Click);
             // 
             // Btn_abrirturno
             // 

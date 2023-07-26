@@ -60,5 +60,28 @@ namespace Sol_PuntoVenta.Presentacion.Controles
             set { Lbl_codigo_tu.Text = Convert.ToString(value); }
         }
         #endregion
+
+        private void Pct_imagenmesa_Click(object sender, EventArgs e)
+        {
+            Procesos.Frm_Mesa_Abierta oFrm_mesaabierta = new Procesos.Frm_Mesa_Abierta();
+            oFrm_mesaabierta.Txt_mesaseleccionada.Text = Descripcion;
+            oFrm_mesaabierta.Txt_puntodeventa.Text = Descripcion_pv;
+            oFrm_mesaabierta.Lbl_codigo_pv.Text = Convert.ToString(Codigo_pv);
+            oFrm_mesaabierta.Btn_nuevopedido.Focus();
+            try
+            {
+                oFrm_mesaabierta.Dgv_listado_sf.DataSource = N_MesaAbierta.Listar_SubFamilias_RP(Codigo_pv);
+                //Dando formato al Datagriedview de subfamilia
+                oFrm_mesaabierta.Dgv_listado_sf.Columns[0].Width = 250;
+                oFrm_mesaabierta.Dgv_listado_sf.Columns[0].HeaderText = "SUBFAMILIAS";
+                oFrm_mesaabierta.Dgv_listado_sf.Columns[1].Visible = false;
+                oFrm_mesaabierta.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+
+        }
     }
 }

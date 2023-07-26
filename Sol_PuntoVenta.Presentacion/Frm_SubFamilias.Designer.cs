@@ -220,7 +220,7 @@
             this.Pnl_Listado_1.Controls.Add(this.Btn_buscar1);
             this.Pnl_Listado_1.Controls.Add(this.Txt_buscar1);
             this.Pnl_Listado_1.Controls.Add(this.label5);
-            this.Pnl_Listado_1.Location = new System.Drawing.Point(449, 88);
+            this.Pnl_Listado_1.Location = new System.Drawing.Point(450, 103);
             this.Pnl_Listado_1.Name = "Pnl_Listado_1";
             this.Pnl_Listado_1.Size = new System.Drawing.Size(435, 316);
             this.Pnl_Listado_1.TabIndex = 10;
@@ -260,7 +260,6 @@
             this.Dgv_1.EnableHeadersVisualStyles = false;
             this.Dgv_1.Location = new System.Drawing.Point(27, 110);
             this.Dgv_1.Name = "Dgv_1";
-            this.Dgv_1.ReadOnly = true;
             this.Dgv_1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.Dgv_1.Size = new System.Drawing.Size(386, 184);
             this.Dgv_1.TabIndex = 11;

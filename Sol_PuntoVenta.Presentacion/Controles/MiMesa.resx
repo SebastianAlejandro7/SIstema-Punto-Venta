@@ -121,7 +121,7 @@
   <data name="Pct_estado.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAN
-        9wAADfcB0AC67AAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAEZkSURBVHhe7d0J
+        9QAADfUBr/55ZQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAEZkSURBVHhe7d0J
         mFX1le7/BA2PBkQUIqCI4mxMooma2B3bVtt0zGSMxk4ntkb/1/tvb25HKKAAQY0aJUYTM2uiMco8z6ig
         KIqKIA4ogoqozIhMMs+177uKc3CzaxXUcIY9fFeez/PERVF1zt77t94fcM7ZnwqCAEDMfeWJmw6W9nK6
         XChXyPXSW+6VvjJCxsskeUZelFfkTXlXFsqHslY2yc4c+//Ws1+zr7Gvtd9jv9e+h30v+572ve1n2M+y
@@ -425,10 +425,10 @@
         2WPkTnhA7AWf+n91gsijvVh0PAAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="Pct_imagenmesa.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAN
-        1QAADdUBPdZY8QAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAADF4SURBVHhe7d17
+        0wAADdMBvdUcagAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAADF4SURBVHhe7d17
         2B1VYe/xN29Cwi1AQO6pYLgGCJcIEgPWRC6SAAGpgFwURCThVq7WgrWKoggtHBVbrUfQqhVarZ5a22O1
         3qj2+LS2Aqe1PWpPfdp6tLWPrbWtVpE5vxX2hGHll7yz9n737Jk139/zfP5gAXvPmlkz6/fep4qiAAAA
         PWMHAQBA3uwgAADImx0EAAB5s4MAACBvdhAAAOTNDgIAgLzZQQAAkDc7CAAA8mYHAQBA3uwgAADImx0E

@@ -603,7 +603,7 @@ namespace Sol_PuntoVenta.Presentacion
 
         private void Btn_lupa_sf_Click(object sender, EventArgs e)
         {
-            Pnl_Listado_3.Location = Btn_lupa_ma.Location;
+            Pnl_Listado_3.Location = Btn_lupa_sf.Location;
             Pnl_Listado_3.Visible = true;
             Txt_buscar3.Focus();
         }
@@ -640,6 +640,22 @@ namespace Sol_PuntoVenta.Presentacion
             {
                 Pct_imagen.Image = Image.FromFile(Foto.FileName);
             }
+        }
+
+        private void Btn_retornar3_Click_1(object sender, EventArgs e)
+        {
+            Pnl_Listado_3.Visible = false;
+        }
+
+        private void Btn_buscar3_Click_1(object sender, EventArgs e)
+        {
+            this.Listado_sf(Txt_buscar2.Text.Trim());
+        }
+
+        private void Dgv_3_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            this.Selecciona_item_sf();
+            Pnl_Listado_3.Visible = false;
         }
     }
 }
