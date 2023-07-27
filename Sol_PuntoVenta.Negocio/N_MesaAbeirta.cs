@@ -22,5 +22,10 @@ namespace Sol_PuntoVenta.Negocio
             D_MesaAbierta Datos = new D_MesaAbierta();
             return Datos.ListarProductos_SubFamilias_RP(nCodigo_pv, nCodigo_sf);
         }
+        public static DataTable Busquedarapida_pr(string cTexto)
+        {
+            D_MesaAbierta Datos = new D_MesaAbierta(); // Instanciamos la capa de datos y cargamos a una variable
+            return Datos.Busquedarapida_pr(cTexto); // Con esa variable se comunica directamente con Listado_pv de (Sol_PuntoVenta.Datos)
+        }
     }
 }

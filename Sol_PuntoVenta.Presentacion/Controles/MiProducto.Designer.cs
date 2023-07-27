@@ -35,6 +35,7 @@
             this.Lbl_preciounitario_pr = new System.Windows.Forms.Label();
             this.Lbl_descripcion_pr = new System.Windows.Forms.Label();
             this.Pct_imagen_pr = new System.Windows.Forms.PictureBox();
+            this.Lbl_archivo_txt = new System.Windows.Forms.Label();
             this.Pnl_producto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Pct_imagen_pr)).BeginInit();
             this.SuspendLayout();
@@ -43,6 +44,7 @@
             // 
             this.Pnl_producto.BackColor = System.Drawing.Color.Lavender;
             this.Pnl_producto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Pnl_producto.Controls.Add(this.Lbl_archivo_txt);
             this.Pnl_producto.Controls.Add(this.Lbl_impresora);
             this.Pnl_producto.Controls.Add(this.Lbl_codigo_pr);
             this.Pnl_producto.Controls.Add(this.Lbl_preciounitario_pr);
@@ -92,6 +94,7 @@
             // 
             // Pct_imagen_pr
             // 
+            this.Pct_imagen_pr.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Pct_imagen_pr.Image = ((System.Drawing.Image)(resources.GetObject("Pct_imagen_pr.Image")));
             this.Pct_imagen_pr.Location = new System.Drawing.Point(34, 2);
             this.Pct_imagen_pr.Name = "Pct_imagen_pr";
@@ -99,6 +102,16 @@
             this.Pct_imagen_pr.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Pct_imagen_pr.TabIndex = 4;
             this.Pct_imagen_pr.TabStop = false;
+            this.Pct_imagen_pr.Click += new System.EventHandler(this.Pct_imagen_pr_Click);
+            // 
+            // Lbl_archivo_txt
+            // 
+            this.Lbl_archivo_txt.Location = new System.Drawing.Point(3, 76);
+            this.Lbl_archivo_txt.Name = "Lbl_archivo_txt";
+            this.Lbl_archivo_txt.Size = new System.Drawing.Size(25, 23);
+            this.Lbl_archivo_txt.TabIndex = 9;
+            this.Lbl_archivo_txt.Text = "Lbl_archivo_txt";
+            this.Lbl_archivo_txt.Visible = false;
             // 
             // MiProducto
             // 
@@ -121,5 +134,6 @@
         private System.Windows.Forms.Label Lbl_descripcion_pr;
         private System.Windows.Forms.PictureBox Pct_imagen_pr;
         private System.Windows.Forms.Label Lbl_impresora;
+        private System.Windows.Forms.Label Lbl_archivo_txt;
     }
 }

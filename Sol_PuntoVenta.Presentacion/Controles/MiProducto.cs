@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,7 +16,7 @@ namespace Sol_PuntoVenta.Presentacion.Controles
         #region "Mis Variables y Propiedades"
         public int Codigo_pr
         {
-            get { return Convert.ToInt32(Lbl_codigo_pr.Text); }
+            get { return Convert.ToInt32(Lbl_codigo_pr.Text); }//system.convert.toin32(string value)
             set { Lbl_codigo_pr.Text = Convert.ToString(value); }
         }
 
@@ -43,10 +44,34 @@ namespace Sol_PuntoVenta.Presentacion.Controles
             set { Pct_imagen_pr.Image = value; }
         }
 
+        public string Archivo_txt
+        {
+            get { return Lbl_archivo_txt.Text; }
+            set { Lbl_archivo_txt.Text = value; }
+        }
+
         #endregion
         public MiProducto()
         {
             InitializeComponent();
+        }
+
+        private void Pct_imagen_pr_Click(object sender, EventArgs e)
+        {   //envia toda la informacion
+            StreamWriter Escribir = new StreamWriter(@"C:\Users\Public\Documents\" + Archivo_txt.Trim()+".txt",true);
+            try
+            {
+                Escribir.WriteLine("Descripcion_pr: " + Descripcion_pr);
+                Escribir.WriteLine("Preciounitario_pr: " + Preciounitario_pr);
+                Escribir.WriteLine("Codigo_pr: " + Codigo_pr);
+                Escribir.WriteLine("Impresora: " + Impresora);
+                Escribir.WriteLine("\n");
+                Escribir.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
         }
     }
 }
