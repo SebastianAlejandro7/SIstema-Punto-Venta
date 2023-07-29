@@ -35,6 +35,7 @@ namespace Sol_PuntoVenta.Presentacion.Procesos
         public string Descripcion_pv1 { get => Descripcion_pv; set => Descripcion_pv = value; }
         public int Codigo_us1 { get => Codigo_us; set => Codigo_us = value; }
         public int Codigo_tu1 { get => Codigo_tu; set => Codigo_tu = value; }
+        public string Fecha_trabajo1 { get => Fecha_trabajo; set => Fecha_trabajo = value; }
 
         private int Codigo_me;
         private string Descripcion_me;
@@ -43,6 +44,7 @@ namespace Sol_PuntoVenta.Presentacion.Procesos
         private string Descripcion_pv;
         private int Codigo_us;
         private int Codigo_tu;
+        private string Fecha_trabajo;
 
         #endregion
 
@@ -140,6 +142,8 @@ namespace Sol_PuntoVenta.Presentacion.Procesos
                     Descripcion_pv = Convert.ToString(Tabla.Rows[nFila][4]);
                     Codigo_us = this.nCodigo_us;
                     Codigo_tu = this.nCodigo_tu;
+                    Fecha_trabajo = Txt_fechatrabajo.Text.Trim();
+
                     // Creamos la mesa para cargar los datos...
                     Controles.MiMesa oMesa = new Controles.MiMesa(); // 'Controles' carpeta donde se ha guardado
                     oMesa.Codigo = Codigo_me;
@@ -149,6 +153,7 @@ namespace Sol_PuntoVenta.Presentacion.Procesos
                     oMesa.Descripcion_pv = Descripcion_pv;
                     oMesa.Codigo_us = Codigo_us;
                     oMesa.Codigo_tu = Codigo_tu;
+                    oMesa.Fecha_trabajo = Fecha_trabajo;
                     // Añadimos la mesa al Control.'FlowLayoutPanel (L109)'
                     Contenedor.Controls.Add(oMesa);
                 }
@@ -192,6 +197,7 @@ namespace Sol_PuntoVenta.Presentacion.Procesos
             if (this.nCodigo_pv>0)
             {
                 this.Estado_FechaTurno_pv(this.nCodigo_pv);
+                this.LlenarPuntoVenta(flowLayoutPanel1);
             }
         }
     }

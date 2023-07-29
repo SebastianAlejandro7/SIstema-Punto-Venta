@@ -72,6 +72,10 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.Pct_Usuario = new System.Windows.Forms.PictureBox();
+            this.Lbl_nombres_usuario = new System.Windows.Forms.Label();
+            this.Lbl_descripcion_ca = new System.Windows.Forms.Label();
+            this.Pct_cargo = new System.Windows.Forms.PictureBox();
             this.Pnl_menu.SuspendLayout();
             this.Pnl_datosmaestros.SuspendLayout();
             this.Pnl_reportes.SuspendLayout();
@@ -85,6 +89,8 @@
             this.Pnl_contenido.SuspendLayout();
             this.Pnl_logosistema.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pct_Usuario)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pct_cargo)).BeginInit();
             this.SuspendLayout();
             // 
             // Pnl_menu
@@ -709,6 +715,10 @@
             // Pnl_barraestado
             // 
             this.Pnl_barraestado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.Pnl_barraestado.Controls.Add(this.Lbl_descripcion_ca);
+            this.Pnl_barraestado.Controls.Add(this.Pct_cargo);
+            this.Pnl_barraestado.Controls.Add(this.Lbl_nombres_usuario);
+            this.Pnl_barraestado.Controls.Add(this.Pct_Usuario);
             this.Pnl_barraestado.Controls.Add(this.Grb_fechayhora);
             this.Pnl_barraestado.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.Pnl_barraestado.Location = new System.Drawing.Point(230, 651);
@@ -813,6 +823,46 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // Pct_Usuario
+            // 
+            this.Pct_Usuario.Image = ((System.Drawing.Image)(resources.GetObject("Pct_Usuario.Image")));
+            this.Pct_Usuario.Location = new System.Drawing.Point(15, 18);
+            this.Pct_Usuario.Name = "Pct_Usuario";
+            this.Pct_Usuario.Size = new System.Drawing.Size(30, 30);
+            this.Pct_Usuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Pct_Usuario.TabIndex = 1;
+            this.Pct_Usuario.TabStop = false;
+            // 
+            // Lbl_nombres_usuario
+            // 
+            this.Lbl_nombres_usuario.AutoSize = true;
+            this.Lbl_nombres_usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_nombres_usuario.Location = new System.Drawing.Point(51, 26);
+            this.Lbl_nombres_usuario.Name = "Lbl_nombres_usuario";
+            this.Lbl_nombres_usuario.Size = new System.Drawing.Size(53, 15);
+            this.Lbl_nombres_usuario.TabIndex = 2;
+            this.Lbl_nombres_usuario.Text = "Usuario:";
+            // 
+            // Lbl_descripcion_ca
+            // 
+            this.Lbl_descripcion_ca.AutoSize = true;
+            this.Lbl_descripcion_ca.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_descripcion_ca.Location = new System.Drawing.Point(51, 61);
+            this.Lbl_descripcion_ca.Name = "Lbl_descripcion_ca";
+            this.Lbl_descripcion_ca.Size = new System.Drawing.Size(43, 15);
+            this.Lbl_descripcion_ca.TabIndex = 4;
+            this.Lbl_descripcion_ca.Text = "Cargo:";
+            // 
+            // Pct_cargo
+            // 
+            this.Pct_cargo.Image = ((System.Drawing.Image)(resources.GetObject("Pct_cargo.Image")));
+            this.Pct_cargo.Location = new System.Drawing.Point(15, 54);
+            this.Pct_cargo.Name = "Pct_cargo";
+            this.Pct_cargo.Size = new System.Drawing.Size(30, 30);
+            this.Pct_cargo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Pct_cargo.TabIndex = 3;
+            this.Pct_cargo.TabStop = false;
+            // 
             // Frm_DashBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -826,6 +876,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frm_DashBoard";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Frm_DashBoard_Load);
             this.Pnl_menu.ResumeLayout(false);
             this.Pnl_datosmaestros.ResumeLayout(false);
             this.Pnl_reportes.ResumeLayout(false);
@@ -835,10 +886,13 @@
             this.Pnl_titulo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.IconoSeleccionado)).EndInit();
             this.Pnl_barraestado.ResumeLayout(false);
+            this.Pnl_barraestado.PerformLayout();
             this.Grb_fechayhora.ResumeLayout(false);
             this.Pnl_contenido.ResumeLayout(false);
             this.Pnl_logosistema.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pct_Usuario)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pct_cargo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -887,5 +941,9 @@
         private FontAwesome.Sharp.IconButton DM_subfamilias;
         private FontAwesome.Sharp.IconButton DM_areadespacho;
         private FontAwesome.Sharp.IconButton DM_mesas;
+        private System.Windows.Forms.Label Lbl_descripcion_ca;
+        private System.Windows.Forms.PictureBox Pct_cargo;
+        private System.Windows.Forms.Label Lbl_nombres_usuario;
+        private System.Windows.Forms.PictureBox Pct_Usuario;
     }
 }

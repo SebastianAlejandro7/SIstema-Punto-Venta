@@ -38,6 +38,7 @@
             this.Lbl_descripcion_me = new System.Windows.Forms.Label();
             this.Pct_estado = new System.Windows.Forms.PictureBox();
             this.Pct_imagenmesa = new System.Windows.Forms.PictureBox();
+            this.Lbl_fecha_trabajo = new System.Windows.Forms.Label();
             this.Pnl_mesa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Pct_estado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pct_imagenmesa)).BeginInit();
@@ -45,6 +46,7 @@
             // 
             // Pnl_mesa
             // 
+            this.Pnl_mesa.Controls.Add(this.Lbl_fecha_trabajo);
             this.Pnl_mesa.Controls.Add(this.Lbl_codigo_tu);
             this.Pnl_mesa.Controls.Add(this.Lbl_codigo_us);
             this.Pnl_mesa.Controls.Add(this.Lbl_descripcion_pv);
@@ -134,6 +136,15 @@
             this.Pct_imagenmesa.TabStop = false;
             this.Pct_imagenmesa.Click += new System.EventHandler(this.Pct_imagenmesa_Click);
             // 
+            // Lbl_fecha_trabajo
+            // 
+            this.Lbl_fecha_trabajo.Location = new System.Drawing.Point(0, 69);
+            this.Lbl_fecha_trabajo.Name = "Lbl_fecha_trabajo";
+            this.Lbl_fecha_trabajo.Size = new System.Drawing.Size(23, 23);
+            this.Lbl_fecha_trabajo.TabIndex = 8;
+            this.Lbl_fecha_trabajo.Text = "Lbl_fecha_trabajo";
+            this.Lbl_fecha_trabajo.Visible = false;
+            // 
             // MiMesa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -159,5 +170,6 @@
         private System.Windows.Forms.Label Lbl_descripcion_pv;
         private System.Windows.Forms.Label Lbl_codigo_pv;
         private System.Windows.Forms.Label Lbl_codigo_tu;
+        private System.Windows.Forms.Label Lbl_fecha_trabajo;
     }
 }

@@ -59,15 +59,25 @@ namespace Sol_PuntoVenta.Presentacion.Controles
             get { return Convert.ToInt32(Lbl_codigo_tu.Text); }
             set { Lbl_codigo_tu.Text = Convert.ToString(value); }
         }
+
+        public string Fecha_trabajo
+        {
+            get { return Lbl_fecha_trabajo.Text; }
+            set { Lbl_fecha_trabajo.Text = value; }
+        }
+
         #endregion
 
         private void Pct_imagenmesa_Click(object sender, EventArgs e)
         {
             Procesos.Frm_Mesa_Abierta oFrm_mesaabierta = new Procesos.Frm_Mesa_Abierta();
+            oFrm_mesaabierta.Lbl_codigo_me.Text = Convert.ToString(Codigo);
             oFrm_mesaabierta.Txt_mesaseleccionada.Text = Descripcion;
             oFrm_mesaabierta.Txt_puntodeventa.Text = Descripcion_pv;
             oFrm_mesaabierta.Lbl_codigo_pv.Text = Convert.ToString(Codigo_pv);
+            oFrm_mesaabierta.Lbl_codigo_tu.Text = Convert.ToString(Codigo_tu);
             oFrm_mesaabierta.Lbl_archivo_txt.Text = Convert.ToString(DateTime.Now.Ticks); //638260061064767794.txt Asigna el valor de DateTime.Now.Ticks convertido a cadena al texto del control Lbl_archivo_txt.
+            oFrm_mesaabierta.Lbl_fecha_trabajo.Text = Fecha_trabajo;
             oFrm_mesaabierta.Btn_nuevopedido.Focus();
             try
             {

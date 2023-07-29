@@ -30,15 +30,24 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Mesa_Abierta));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Pnl_titulo_form = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.Pnl_superior = new System.Windows.Forms.Panel();
+            this.Lbl_fecha_trabajo = new System.Windows.Forms.Label();
+            this.Lbl_codigo_tu = new System.Windows.Forms.Label();
+            this.Lbl_codigo_me = new System.Windows.Forms.Label();
             this.Lbl_archivo_txt = new System.Windows.Forms.Label();
             this.Lbl_codigo_pv = new System.Windows.Forms.Label();
             this.Btn_nuevopedido = new System.Windows.Forms.Button();
@@ -57,7 +66,16 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.Dgv_listado_sf = new System.Windows.Forms.DataGridView();
             this.Pnl_pedido = new System.Windows.Forms.Panel();
+            this.Pnl_busqueda_cl = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.Btn_retornar_cl = new System.Windows.Forms.Button();
+            this.Dgv_2 = new System.Windows.Forms.DataGridView();
+            this.Btn_buscar_cl = new System.Windows.Forms.Button();
+            this.Txt_buscar_cl = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.Pnl_busqueda_pr = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
             this.Btn_retornar_pr = new System.Windows.Forms.Button();
             this.Dgv_1 = new System.Windows.Forms.DataGridView();
             this.Btn_buscar_pr = new System.Windows.Forms.Button();
@@ -69,7 +87,7 @@
             this.Btn_retornar_obs = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
-            this.Btn_generarcomando = new System.Windows.Forms.Button();
+            this.Btn_generarcomanda = new System.Windows.Forms.Button();
             this.Btn_cancelar = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.Lbl_total = new System.Windows.Forms.Label();
@@ -99,7 +117,37 @@
             this.label4 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label10 = new System.Windows.Forms.Label();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.Pnl_detalles_tickets = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
+            this.Dgv_tickets = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Pnl_vizualizar_pedidos = new System.Windows.Forms.Panel();
+            this.Btn_anularpedido = new System.Windows.Forms.Button();
+            this.Btn_emitirdocumento = new System.Windows.Forms.Button();
+            this.Btn_dividir_precuenta = new System.Windows.Forms.Button();
+            this.Btn_boleta = new System.Windows.Forms.Button();
+            this.Btn_factura = new System.Windows.Forms.Button();
+            this.Lbl_total_tickets = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.Dgv_detalle_ticket = new System.Windows.Forms.DataGridView();
+            this.Txt_cliente_detalle_tickets = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.Txt_nrodocumento_detalle_tickets = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.Txt_tickets_seleccionado = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.Lbl_total_detalles_tickets = new System.Windows.Forms.Label();
+            this.Btn_reimprimir_comanda = new System.Windows.Forms.Button();
+            this.Pnl_observacion_anulado = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.Lbl_titulo_obsanulado_ti = new System.Windows.Forms.Label();
+            this.Txt_obsanulado_ti = new System.Windows.Forms.TextBox();
+            this.Btn_cancelar_anulado = new System.Windows.Forms.Button();
+            this.Btn_confirmar_anulado = new System.Windows.Forms.Button();
             this.Pnl_titulo_form.SuspendLayout();
             this.Pnl_superior.SuspendLayout();
             this.Tbc_principal.SuspendLayout();
@@ -108,12 +156,23 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_listado_sf)).BeginInit();
             this.Pnl_pedido.SuspendLayout();
+            this.Pnl_busqueda_cl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_2)).BeginInit();
             this.Pnl_busqueda_pr.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_1)).BeginInit();
             this.Pnl_observacion.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_detalle)).BeginInit();
             this.panel1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.Pnl_detalles_tickets.SuspendLayout();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_tickets)).BeginInit();
+            this.Pnl_vizualizar_pedidos.SuspendLayout();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_detalle_ticket)).BeginInit();
+            this.Pnl_observacion_anulado.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // Pnl_titulo_form
@@ -140,6 +199,9 @@
             // Pnl_superior
             // 
             this.Pnl_superior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(186)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.Pnl_superior.Controls.Add(this.Lbl_fecha_trabajo);
+            this.Pnl_superior.Controls.Add(this.Lbl_codigo_tu);
+            this.Pnl_superior.Controls.Add(this.Lbl_codigo_me);
             this.Pnl_superior.Controls.Add(this.Lbl_archivo_txt);
             this.Pnl_superior.Controls.Add(this.Lbl_codigo_pv);
             this.Pnl_superior.Controls.Add(this.Btn_nuevopedido);
@@ -154,6 +216,33 @@
             this.Pnl_superior.Name = "Pnl_superior";
             this.Pnl_superior.Size = new System.Drawing.Size(1284, 82);
             this.Pnl_superior.TabIndex = 7;
+            // 
+            // Lbl_fecha_trabajo
+            // 
+            this.Lbl_fecha_trabajo.Location = new System.Drawing.Point(186, 52);
+            this.Lbl_fecha_trabajo.Name = "Lbl_fecha_trabajo";
+            this.Lbl_fecha_trabajo.Size = new System.Drawing.Size(36, 27);
+            this.Lbl_fecha_trabajo.TabIndex = 24;
+            this.Lbl_fecha_trabajo.Text = "Lbl_fecha_trabajo";
+            this.Lbl_fecha_trabajo.Visible = false;
+            // 
+            // Lbl_codigo_tu
+            // 
+            this.Lbl_codigo_tu.Location = new System.Drawing.Point(213, 0);
+            this.Lbl_codigo_tu.Name = "Lbl_codigo_tu";
+            this.Lbl_codigo_tu.Size = new System.Drawing.Size(36, 27);
+            this.Lbl_codigo_tu.TabIndex = 23;
+            this.Lbl_codigo_tu.Text = "Lbl_codigo_tu";
+            this.Lbl_codigo_tu.Visible = false;
+            // 
+            // Lbl_codigo_me
+            // 
+            this.Lbl_codigo_me.Location = new System.Drawing.Point(186, 15);
+            this.Lbl_codigo_me.Name = "Lbl_codigo_me";
+            this.Lbl_codigo_me.Size = new System.Drawing.Size(36, 27);
+            this.Lbl_codigo_me.TabIndex = 22;
+            this.Lbl_codigo_me.Text = "Lbl_codigo_me";
+            this.Lbl_codigo_me.Visible = false;
             // 
             // Lbl_archivo_txt
             // 
@@ -202,6 +291,11 @@
             this.imageList1.Images.SetKeyName(4, "salir.png");
             this.imageList1.Images.SetKeyName(5, "nuevo pedido.png");
             this.imageList1.Images.SetKeyName(6, "visualizar pedido.png");
+            this.imageList1.Images.SetKeyName(7, "anularpedido.jpg");
+            this.imageList1.Images.SetKeyName(8, "dividircuenta.png");
+            this.imageList1.Images.SetKeyName(9, "emitirprecuenta.png");
+            this.imageList1.Images.SetKeyName(10, "generarboleta.jpg");
+            this.imageList1.Images.SetKeyName(11, "generarfactura.png");
             // 
             // Btn_visualizarpedido
             // 
@@ -358,19 +452,19 @@
             this.Dgv_listado_sf.AllowUserToAddRows = false;
             this.Dgv_listado_sf.AllowUserToDeleteRows = false;
             this.Dgv_listado_sf.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.Dgv_listado_sf.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle27.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle27.ForeColor = System.Drawing.Color.Black;
+            this.Dgv_listado_sf.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle27;
             this.Dgv_listado_sf.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.Dgv_listado_sf.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(145)))), ((int)(((byte)(194)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Dgv_listado_sf.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(145)))), ((int)(((byte)(194)))));
+            dataGridViewCellStyle28.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle28.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dgv_listado_sf.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle28;
             this.Dgv_listado_sf.ColumnHeadersHeight = 35;
             this.Dgv_listado_sf.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.Dgv_listado_sf.EnableHeadersVisualStyles = false;
@@ -383,9 +477,10 @@
             // 
             // Pnl_pedido
             // 
+            this.Pnl_pedido.Controls.Add(this.Pnl_busqueda_cl);
             this.Pnl_pedido.Controls.Add(this.Pnl_busqueda_pr);
             this.Pnl_pedido.Controls.Add(this.Pnl_observacion);
-            this.Pnl_pedido.Controls.Add(this.Btn_generarcomando);
+            this.Pnl_pedido.Controls.Add(this.Btn_generarcomanda);
             this.Pnl_pedido.Controls.Add(this.Btn_cancelar);
             this.Pnl_pedido.Controls.Add(this.label8);
             this.Pnl_pedido.Controls.Add(this.Lbl_total);
@@ -418,6 +513,114 @@
             this.Pnl_pedido.Size = new System.Drawing.Size(530, 551);
             this.Pnl_pedido.TabIndex = 0;
             // 
+            // Pnl_busqueda_cl
+            // 
+            this.Pnl_busqueda_cl.Controls.Add(this.label11);
+            this.Pnl_busqueda_cl.Controls.Add(this.Btn_retornar_cl);
+            this.Pnl_busqueda_cl.Controls.Add(this.Dgv_2);
+            this.Pnl_busqueda_cl.Controls.Add(this.Btn_buscar_cl);
+            this.Pnl_busqueda_cl.Controls.Add(this.Txt_buscar_cl);
+            this.Pnl_busqueda_cl.Controls.Add(this.label12);
+            this.Pnl_busqueda_cl.Controls.Add(this.textBox3);
+            this.Pnl_busqueda_cl.Location = new System.Drawing.Point(505, 143);
+            this.Pnl_busqueda_cl.Name = "Pnl_busqueda_cl";
+            this.Pnl_busqueda_cl.Size = new System.Drawing.Size(482, 236);
+            this.Pnl_busqueda_cl.TabIndex = 43;
+            this.Pnl_busqueda_cl.Visible = false;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
+            this.label11.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label11.Location = new System.Drawing.Point(7, 21);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(147, 14);
+            this.label11.TabIndex = 48;
+            this.label11.Text = "Búsqueda de clioente";
+            // 
+            // Btn_retornar_cl
+            // 
+            this.Btn_retornar_cl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
+            this.Btn_retornar_cl.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(246)))), ((int)(((byte)(245)))));
+            this.Btn_retornar_cl.Image = ((System.Drawing.Image)(resources.GetObject("Btn_retornar_cl.Image")));
+            this.Btn_retornar_cl.Location = new System.Drawing.Point(421, 13);
+            this.Btn_retornar_cl.Name = "Btn_retornar_cl";
+            this.Btn_retornar_cl.Size = new System.Drawing.Size(33, 30);
+            this.Btn_retornar_cl.TabIndex = 47;
+            this.Btn_retornar_cl.UseVisualStyleBackColor = false;
+            this.Btn_retornar_cl.Click += new System.EventHandler(this.Btn_retornar_cl_Click);
+            // 
+            // Dgv_2
+            // 
+            this.Dgv_2.AllowUserToAddRows = false;
+            this.Dgv_2.AllowUserToDeleteRows = false;
+            this.Dgv_2.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle29.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle29.ForeColor = System.Drawing.Color.Black;
+            this.Dgv_2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle29;
+            this.Dgv_2.BackgroundColor = System.Drawing.SystemColors.Menu;
+            this.Dgv_2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(145)))), ((int)(((byte)(194)))));
+            dataGridViewCellStyle30.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle30.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dgv_2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle30;
+            this.Dgv_2.ColumnHeadersHeight = 35;
+            this.Dgv_2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.Dgv_2.EnableHeadersVisualStyles = false;
+            this.Dgv_2.Location = new System.Drawing.Point(3, 45);
+            this.Dgv_2.Name = "Dgv_2";
+            this.Dgv_2.ReadOnly = true;
+            this.Dgv_2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.Dgv_2.Size = new System.Drawing.Size(476, 188);
+            this.Dgv_2.TabIndex = 45;
+            this.Dgv_2.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_2_CellDoubleClick);
+            // 
+            // Btn_buscar_cl
+            // 
+            this.Btn_buscar_cl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
+            this.Btn_buscar_cl.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(246)))), ((int)(((byte)(245)))));
+            this.Btn_buscar_cl.Image = ((System.Drawing.Image)(resources.GetObject("Btn_buscar_cl.Image")));
+            this.Btn_buscar_cl.Location = new System.Drawing.Point(386, 13);
+            this.Btn_buscar_cl.Name = "Btn_buscar_cl";
+            this.Btn_buscar_cl.Size = new System.Drawing.Size(33, 30);
+            this.Btn_buscar_cl.TabIndex = 44;
+            this.Btn_buscar_cl.UseVisualStyleBackColor = false;
+            this.Btn_buscar_cl.Click += new System.EventHandler(this.Btn_buscar_cl_Click);
+            // 
+            // Txt_buscar_cl
+            // 
+            this.Txt_buscar_cl.Location = new System.Drawing.Point(199, 18);
+            this.Txt_buscar_cl.Name = "Txt_buscar_cl";
+            this.Txt_buscar_cl.Size = new System.Drawing.Size(183, 20);
+            this.Txt_buscar_cl.TabIndex = 43;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(196, 3);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(43, 13);
+            this.label12.TabIndex = 42;
+            this.label12.Text = "Buscar:";
+            // 
+            // textBox3
+            // 
+            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(144)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
+            this.textBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox3.Location = new System.Drawing.Point(0, 0);
+            this.textBox3.Multiline = true;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(482, 236);
+            this.textBox3.TabIndex = 41;
+            // 
             // Pnl_busqueda_pr
             // 
             this.Pnl_busqueda_pr.Controls.Add(this.label10);
@@ -427,11 +630,23 @@
             this.Pnl_busqueda_pr.Controls.Add(this.Txt_buscar_pr);
             this.Pnl_busqueda_pr.Controls.Add(this.label16);
             this.Pnl_busqueda_pr.Controls.Add(this.textBox1);
-            this.Pnl_busqueda_pr.Location = new System.Drawing.Point(9, 89);
+            this.Pnl_busqueda_pr.Location = new System.Drawing.Point(27, 193);
             this.Pnl_busqueda_pr.Name = "Pnl_busqueda_pr";
             this.Pnl_busqueda_pr.Size = new System.Drawing.Size(509, 236);
             this.Pnl_busqueda_pr.TabIndex = 42;
             this.Pnl_busqueda_pr.Visible = false;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.label10.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label10.Location = new System.Drawing.Point(7, 21);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(206, 14);
+            this.label10.TabIndex = 48;
+            this.label10.Text = "Búsqueda rápida de productos";
             // 
             // Btn_retornar_pr
             // 
@@ -450,19 +665,19 @@
             this.Dgv_1.AllowUserToAddRows = false;
             this.Dgv_1.AllowUserToDeleteRows = false;
             this.Dgv_1.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            this.Dgv_1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle31.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle31.ForeColor = System.Drawing.Color.Black;
+            this.Dgv_1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle31;
             this.Dgv_1.BackgroundColor = System.Drawing.SystemColors.Menu;
             this.Dgv_1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(145)))), ((int)(((byte)(194)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Dgv_1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(145)))), ((int)(((byte)(194)))));
+            dataGridViewCellStyle32.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle32.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dgv_1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle32;
             this.Dgv_1.ColumnHeadersHeight = 35;
             this.Dgv_1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.Dgv_1.EnableHeadersVisualStyles = false;
@@ -570,19 +785,20 @@
             this.label9.TabIndex = 0;
             this.label9.Text = "Obersvacion:";
             // 
-            // Btn_generarcomando
+            // Btn_generarcomanda
             // 
-            this.Btn_generarcomando.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(132)))), ((int)(((byte)(227)))));
-            this.Btn_generarcomando.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(246)))), ((int)(((byte)(245)))));
-            this.Btn_generarcomando.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_generarcomando.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_generarcomando.ForeColor = System.Drawing.Color.White;
-            this.Btn_generarcomando.Location = new System.Drawing.Point(262, 470);
-            this.Btn_generarcomando.Name = "Btn_generarcomando";
-            this.Btn_generarcomando.Size = new System.Drawing.Size(180, 60);
-            this.Btn_generarcomando.TabIndex = 40;
-            this.Btn_generarcomando.Text = "Generar Comando";
-            this.Btn_generarcomando.UseVisualStyleBackColor = false;
+            this.Btn_generarcomanda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(132)))), ((int)(((byte)(227)))));
+            this.Btn_generarcomanda.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(246)))), ((int)(((byte)(245)))));
+            this.Btn_generarcomanda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_generarcomanda.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_generarcomanda.ForeColor = System.Drawing.Color.White;
+            this.Btn_generarcomanda.Location = new System.Drawing.Point(262, 470);
+            this.Btn_generarcomanda.Name = "Btn_generarcomanda";
+            this.Btn_generarcomanda.Size = new System.Drawing.Size(180, 60);
+            this.Btn_generarcomanda.TabIndex = 40;
+            this.Btn_generarcomanda.Text = "Generar Comanda";
+            this.Btn_generarcomanda.UseVisualStyleBackColor = false;
+            this.Btn_generarcomanda.Click += new System.EventHandler(this.Btn_generarcomanda_Click);
             // 
             // Btn_cancelar
             // 
@@ -627,18 +843,18 @@
             this.Dgv_detalle.AllowUserToAddRows = false;
             this.Dgv_detalle.AllowUserToDeleteRows = false;
             this.Dgv_detalle.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.LightCyan;
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            this.Dgv_detalle.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle33.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle33.ForeColor = System.Drawing.Color.Black;
+            this.Dgv_detalle.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle33;
             this.Dgv_detalle.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(145)))), ((int)(((byte)(194)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Dgv_detalle.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle34.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(145)))), ((int)(((byte)(194)))));
+            dataGridViewCellStyle34.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle34.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dgv_detalle.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle34;
             this.Dgv_detalle.ColumnHeadersHeight = 35;
             this.Dgv_detalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.Dgv_detalle.EnableHeadersVisualStyles = false;
@@ -879,6 +1095,7 @@
             this.Chk_manual.TabIndex = 16;
             this.Chk_manual.Text = "Manual";
             this.Chk_manual.UseVisualStyleBackColor = true;
+            this.Chk_manual.CheckedChanged += new System.EventHandler(this.Chk_manual_CheckedChanged);
             // 
             // Btn_lupa_1
             // 
@@ -890,7 +1107,7 @@
             this.Btn_lupa_1.Size = new System.Drawing.Size(27, 27);
             this.Btn_lupa_1.TabIndex = 15;
             this.Btn_lupa_1.UseVisualStyleBackColor = true;
-            this.Btn_lupa_1.Visible = false;
+            this.Btn_lupa_1.Click += new System.EventHandler(this.Btn_lupa_1_Click);
             // 
             // label6
             // 
@@ -951,6 +1168,14 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.Pnl_detalles_tickets);
+            this.tabPage2.Controls.Add(this.Lbl_total_tickets);
+            this.tabPage2.Controls.Add(this.Btn_factura);
+            this.tabPage2.Controls.Add(this.Btn_boleta);
+            this.tabPage2.Controls.Add(this.Btn_dividir_precuenta);
+            this.tabPage2.Controls.Add(this.Btn_emitirdocumento);
+            this.tabPage2.Controls.Add(this.Btn_anularpedido);
+            this.tabPage2.Controls.Add(this.Pnl_vizualizar_pedidos);
             this.tabPage2.Location = new System.Drawing.Point(4, 34);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -964,17 +1189,404 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // label10
+            // Pnl_detalles_tickets
             // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.label10.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label10.Location = new System.Drawing.Point(7, 21);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(206, 14);
-            this.label10.TabIndex = 48;
-            this.label10.Text = "Busqueda rápida de productos";
+            this.Pnl_detalles_tickets.Controls.Add(this.Btn_reimprimir_comanda);
+            this.Pnl_detalles_tickets.Controls.Add(this.label19);
+            this.Pnl_detalles_tickets.Controls.Add(this.Lbl_total_detalles_tickets);
+            this.Pnl_detalles_tickets.Controls.Add(this.Txt_tickets_seleccionado);
+            this.Pnl_detalles_tickets.Controls.Add(this.label18);
+            this.Pnl_detalles_tickets.Controls.Add(this.Txt_nrodocumento_detalle_tickets);
+            this.Pnl_detalles_tickets.Controls.Add(this.label17);
+            this.Pnl_detalles_tickets.Controls.Add(this.Txt_cliente_detalle_tickets);
+            this.Pnl_detalles_tickets.Controls.Add(this.label15);
+            this.Pnl_detalles_tickets.Controls.Add(this.Dgv_detalle_ticket);
+            this.Pnl_detalles_tickets.Controls.Add(this.panel6);
+            this.Pnl_detalles_tickets.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Pnl_detalles_tickets.Location = new System.Drawing.Point(607, 3);
+            this.Pnl_detalles_tickets.Name = "Pnl_detalles_tickets";
+            this.Pnl_detalles_tickets.Size = new System.Drawing.Size(666, 555);
+            this.Pnl_detalles_tickets.TabIndex = 8;
+            this.Pnl_detalles_tickets.Visible = false;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(117)))), ((int)(((byte)(110)))));
+            this.panel5.Controls.Add(this.label13);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(604, 40);
+            this.panel5.TabIndex = 8;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label13.Location = new System.Drawing.Point(22, 13);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(193, 14);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "::: TICKETS REALIZADOS :::";
+            // 
+            // Dgv_tickets
+            // 
+            this.Dgv_tickets.AllowUserToAddRows = false;
+            this.Dgv_tickets.AllowUserToDeleteRows = false;
+            this.Dgv_tickets.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle25.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.Black;
+            this.Dgv_tickets.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
+            this.Dgv_tickets.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(145)))), ((int)(((byte)(194)))));
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle26.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dgv_tickets.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
+            this.Dgv_tickets.ColumnHeadersHeight = 35;
+            this.Dgv_tickets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.Dgv_tickets.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1});
+            this.Dgv_tickets.EnableHeadersVisualStyles = false;
+            this.Dgv_tickets.Location = new System.Drawing.Point(3, 46);
+            this.Dgv_tickets.Name = "Dgv_tickets";
+            this.Dgv_tickets.ReadOnly = true;
+            this.Dgv_tickets.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.Dgv_tickets.Size = new System.Drawing.Size(598, 368);
+            this.Dgv_tickets.TabIndex = 9;
+            this.Dgv_tickets.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_tickets_CellClick);
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Seleccionar";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Pnl_vizualizar_pedidos
+            // 
+            this.Pnl_vizualizar_pedidos.Controls.Add(this.Pnl_observacion_anulado);
+            this.Pnl_vizualizar_pedidos.Controls.Add(this.Dgv_tickets);
+            this.Pnl_vizualizar_pedidos.Controls.Add(this.panel5);
+            this.Pnl_vizualizar_pedidos.Dock = System.Windows.Forms.DockStyle.Left;
+            this.Pnl_vizualizar_pedidos.Location = new System.Drawing.Point(3, 3);
+            this.Pnl_vizualizar_pedidos.Name = "Pnl_vizualizar_pedidos";
+            this.Pnl_vizualizar_pedidos.Size = new System.Drawing.Size(604, 555);
+            this.Pnl_vizualizar_pedidos.TabIndex = 0;
+            // 
+            // Btn_anularpedido
+            // 
+            this.Btn_anularpedido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(246)))), ((int)(((byte)(245)))));
+            this.Btn_anularpedido.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
+            this.Btn_anularpedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_anularpedido.ImageKey = "anularpedido.jpg";
+            this.Btn_anularpedido.ImageList = this.imageList1;
+            this.Btn_anularpedido.Location = new System.Drawing.Point(41, 467);
+            this.Btn_anularpedido.Name = "Btn_anularpedido";
+            this.Btn_anularpedido.Size = new System.Drawing.Size(100, 70);
+            this.Btn_anularpedido.TabIndex = 2;
+            this.Btn_anularpedido.Text = "Anular Pedido";
+            this.Btn_anularpedido.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Btn_anularpedido.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.Btn_anularpedido.UseVisualStyleBackColor = false;
+            this.Btn_anularpedido.Click += new System.EventHandler(this.Btn_anularpedido_Click);
+            // 
+            // Btn_emitirdocumento
+            // 
+            this.Btn_emitirdocumento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(246)))), ((int)(((byte)(245)))));
+            this.Btn_emitirdocumento.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
+            this.Btn_emitirdocumento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_emitirdocumento.ImageKey = "emitirprecuenta.png";
+            this.Btn_emitirdocumento.ImageList = this.imageList1;
+            this.Btn_emitirdocumento.Location = new System.Drawing.Point(149, 467);
+            this.Btn_emitirdocumento.Name = "Btn_emitirdocumento";
+            this.Btn_emitirdocumento.Size = new System.Drawing.Size(100, 70);
+            this.Btn_emitirdocumento.TabIndex = 3;
+            this.Btn_emitirdocumento.Text = "Emitir Precuenta";
+            this.Btn_emitirdocumento.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Btn_emitirdocumento.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.Btn_emitirdocumento.UseVisualStyleBackColor = false;
+            // 
+            // Btn_dividir_precuenta
+            // 
+            this.Btn_dividir_precuenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(246)))), ((int)(((byte)(245)))));
+            this.Btn_dividir_precuenta.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
+            this.Btn_dividir_precuenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_dividir_precuenta.ImageKey = "dividircuenta.png";
+            this.Btn_dividir_precuenta.ImageList = this.imageList1;
+            this.Btn_dividir_precuenta.Location = new System.Drawing.Point(255, 467);
+            this.Btn_dividir_precuenta.Name = "Btn_dividir_precuenta";
+            this.Btn_dividir_precuenta.Size = new System.Drawing.Size(100, 70);
+            this.Btn_dividir_precuenta.TabIndex = 4;
+            this.Btn_dividir_precuenta.Text = "Dividir Precuenta";
+            this.Btn_dividir_precuenta.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Btn_dividir_precuenta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.Btn_dividir_precuenta.UseVisualStyleBackColor = false;
+            // 
+            // Btn_boleta
+            // 
+            this.Btn_boleta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(246)))), ((int)(((byte)(245)))));
+            this.Btn_boleta.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
+            this.Btn_boleta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_boleta.ImageKey = "generarboleta.jpg";
+            this.Btn_boleta.ImageList = this.imageList1;
+            this.Btn_boleta.Location = new System.Drawing.Point(361, 467);
+            this.Btn_boleta.Name = "Btn_boleta";
+            this.Btn_boleta.Size = new System.Drawing.Size(100, 70);
+            this.Btn_boleta.TabIndex = 5;
+            this.Btn_boleta.Text = "Generar Boleta";
+            this.Btn_boleta.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Btn_boleta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.Btn_boleta.UseVisualStyleBackColor = false;
+            // 
+            // Btn_factura
+            // 
+            this.Btn_factura.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(246)))), ((int)(((byte)(245)))));
+            this.Btn_factura.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
+            this.Btn_factura.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_factura.ImageKey = "generarfactura.png";
+            this.Btn_factura.ImageList = this.imageList1;
+            this.Btn_factura.Location = new System.Drawing.Point(467, 467);
+            this.Btn_factura.Name = "Btn_factura";
+            this.Btn_factura.Size = new System.Drawing.Size(100, 70);
+            this.Btn_factura.TabIndex = 6;
+            this.Btn_factura.Text = "Generar Factura";
+            this.Btn_factura.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Btn_factura.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.Btn_factura.UseVisualStyleBackColor = false;
+            // 
+            // Lbl_total_tickets
+            // 
+            this.Lbl_total_tickets.AutoSize = true;
+            this.Lbl_total_tickets.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_total_tickets.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.Lbl_total_tickets.Location = new System.Drawing.Point(398, 434);
+            this.Lbl_total_tickets.Name = "Lbl_total_tickets";
+            this.Lbl_total_tickets.Size = new System.Drawing.Size(158, 13);
+            this.Lbl_total_tickets.TabIndex = 7;
+            this.Lbl_total_tickets.Text = "Total Nro. Tickets x Mesa:";
+            this.Lbl_total_tickets.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(185)))), ((int)(((byte)(59)))));
+            this.panel6.Controls.Add(this.label14);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(666, 40);
+            this.panel6.TabIndex = 9;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label14.Location = new System.Drawing.Point(22, 13);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(247, 14);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "::: Detalle de Ticket Seleccionado :::";
+            // 
+            // Dgv_detalle_ticket
+            // 
+            this.Dgv_detalle_ticket.AllowUserToAddRows = false;
+            this.Dgv_detalle_ticket.AllowUserToDeleteRows = false;
+            this.Dgv_detalle_ticket.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle35.BackColor = System.Drawing.Color.LightCyan;
+            dataGridViewCellStyle35.ForeColor = System.Drawing.Color.Black;
+            this.Dgv_detalle_ticket.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle35;
+            this.Dgv_detalle_ticket.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle36.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(145)))), ((int)(((byte)(194)))));
+            dataGridViewCellStyle36.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle36.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle36.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle36.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Dgv_detalle_ticket.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle36;
+            this.Dgv_detalle_ticket.ColumnHeadersHeight = 35;
+            this.Dgv_detalle_ticket.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.Dgv_detalle_ticket.EnableHeadersVisualStyles = false;
+            this.Dgv_detalle_ticket.Location = new System.Drawing.Point(3, 141);
+            this.Dgv_detalle_ticket.Name = "Dgv_detalle_ticket";
+            this.Dgv_detalle_ticket.ReadOnly = true;
+            this.Dgv_detalle_ticket.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.Dgv_detalle_ticket.Size = new System.Drawing.Size(658, 303);
+            this.Dgv_detalle_ticket.TabIndex = 10;
+            // 
+            // Txt_cliente_detalle_tickets
+            // 
+            this.Txt_cliente_detalle_tickets.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Txt_cliente_detalle_tickets.Location = new System.Drawing.Point(6, 62);
+            this.Txt_cliente_detalle_tickets.MaxLength = 50;
+            this.Txt_cliente_detalle_tickets.Name = "Txt_cliente_detalle_tickets";
+            this.Txt_cliente_detalle_tickets.ReadOnly = true;
+            this.Txt_cliente_detalle_tickets.Size = new System.Drawing.Size(322, 20);
+            this.Txt_cliente_detalle_tickets.TabIndex = 12;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(151, 46);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(42, 13);
+            this.label15.TabIndex = 11;
+            this.label15.Text = "Cliente:";
+            // 
+            // Txt_nrodocumento_detalle_tickets
+            // 
+            this.Txt_nrodocumento_detalle_tickets.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Txt_nrodocumento_detalle_tickets.Location = new System.Drawing.Point(470, 62);
+            this.Txt_nrodocumento_detalle_tickets.MaxLength = 50;
+            this.Txt_nrodocumento_detalle_tickets.Name = "Txt_nrodocumento_detalle_tickets";
+            this.Txt_nrodocumento_detalle_tickets.ReadOnly = true;
+            this.Txt_nrodocumento_detalle_tickets.Size = new System.Drawing.Size(179, 20);
+            this.Txt_nrodocumento_detalle_tickets.TabIndex = 14;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(517, 43);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(85, 13);
+            this.label17.TabIndex = 13;
+            this.label17.Text = "Nro. Documento";
+            // 
+            // Txt_tickets_seleccionado
+            // 
+            this.Txt_tickets_seleccionado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Txt_tickets_seleccionado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txt_tickets_seleccionado.Location = new System.Drawing.Point(6, 101);
+            this.Txt_tickets_seleccionado.MaxLength = 50;
+            this.Txt_tickets_seleccionado.Multiline = true;
+            this.Txt_tickets_seleccionado.Name = "Txt_tickets_seleccionado";
+            this.Txt_tickets_seleccionado.ReadOnly = true;
+            this.Txt_tickets_seleccionado.Size = new System.Drawing.Size(655, 34);
+            this.Txt_tickets_seleccionado.TabIndex = 16;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(107, 85);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(58, 13);
+            this.label18.TabIndex = 15;
+            this.label18.Text = "Marcas: (*)";
+            // 
+            // label19
+            // 
+            this.label19.BackColor = System.Drawing.Color.Transparent;
+            this.label19.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label19.Location = new System.Drawing.Point(438, 460);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(87, 23);
+            this.label19.TabIndex = 40;
+            this.label19.Text = "Total $/.";
+            this.label19.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // Lbl_total_detalles_tickets
+            // 
+            this.Lbl_total_detalles_tickets.BackColor = System.Drawing.Color.Wheat;
+            this.Lbl_total_detalles_tickets.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Lbl_total_detalles_tickets.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_total_detalles_tickets.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Lbl_total_detalles_tickets.Location = new System.Drawing.Point(532, 447);
+            this.Lbl_total_detalles_tickets.Name = "Lbl_total_detalles_tickets";
+            this.Lbl_total_detalles_tickets.Size = new System.Drawing.Size(129, 40);
+            this.Lbl_total_detalles_tickets.TabIndex = 39;
+            this.Lbl_total_detalles_tickets.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // Btn_reimprimir_comanda
+            // 
+            this.Btn_reimprimir_comanda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(132)))), ((int)(((byte)(227)))));
+            this.Btn_reimprimir_comanda.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(246)))), ((int)(((byte)(245)))));
+            this.Btn_reimprimir_comanda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_reimprimir_comanda.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_reimprimir_comanda.ForeColor = System.Drawing.Color.White;
+            this.Btn_reimprimir_comanda.Location = new System.Drawing.Point(455, 492);
+            this.Btn_reimprimir_comanda.Name = "Btn_reimprimir_comanda";
+            this.Btn_reimprimir_comanda.Size = new System.Drawing.Size(206, 60);
+            this.Btn_reimprimir_comanda.TabIndex = 41;
+            this.Btn_reimprimir_comanda.Text = "Reimprimir Comanda";
+            this.Btn_reimprimir_comanda.UseVisualStyleBackColor = false;
+            this.Btn_reimprimir_comanda.Click += new System.EventHandler(this.Btn_reimprimir_comanda_Click);
+            // 
+            // Pnl_observacion_anulado
+            // 
+            this.Pnl_observacion_anulado.Controls.Add(this.Btn_confirmar_anulado);
+            this.Pnl_observacion_anulado.Controls.Add(this.Btn_cancelar_anulado);
+            this.Pnl_observacion_anulado.Controls.Add(this.Txt_obsanulado_ti);
+            this.Pnl_observacion_anulado.Controls.Add(this.panel7);
+            this.Pnl_observacion_anulado.Location = new System.Drawing.Point(43, 157);
+            this.Pnl_observacion_anulado.Name = "Pnl_observacion_anulado";
+            this.Pnl_observacion_anulado.Size = new System.Drawing.Size(515, 206);
+            this.Pnl_observacion_anulado.TabIndex = 10;
+            this.Pnl_observacion_anulado.Visible = false;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.Tomato;
+            this.panel7.Controls.Add(this.Lbl_titulo_obsanulado_ti);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel7.Location = new System.Drawing.Point(0, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(515, 40);
+            this.panel7.TabIndex = 9;
+            // 
+            // Lbl_titulo_obsanulado_ti
+            // 
+            this.Lbl_titulo_obsanulado_ti.AutoSize = true;
+            this.Lbl_titulo_obsanulado_ti.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_titulo_obsanulado_ti.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.Lbl_titulo_obsanulado_ti.Location = new System.Drawing.Point(22, 13);
+            this.Lbl_titulo_obsanulado_ti.Name = "Lbl_titulo_obsanulado_ti";
+            this.Lbl_titulo_obsanulado_ti.Size = new System.Drawing.Size(207, 14);
+            this.Lbl_titulo_obsanulado_ti.TabIndex = 0;
+            this.Lbl_titulo_obsanulado_ti.Text = "Observación de ticket anulado";
+            // 
+            // Txt_obsanulado_ti
+            // 
+            this.Txt_obsanulado_ti.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Txt_obsanulado_ti.Location = new System.Drawing.Point(0, 40);
+            this.Txt_obsanulado_ti.Multiline = true;
+            this.Txt_obsanulado_ti.Name = "Txt_obsanulado_ti";
+            this.Txt_obsanulado_ti.Size = new System.Drawing.Size(515, 89);
+            this.Txt_obsanulado_ti.TabIndex = 10;
+            // 
+            // Btn_cancelar_anulado
+            // 
+            this.Btn_cancelar_anulado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(110)))), ((int)(((byte)(114)))));
+            this.Btn_cancelar_anulado.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(246)))), ((int)(((byte)(245)))));
+            this.Btn_cancelar_anulado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_cancelar_anulado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_cancelar_anulado.ForeColor = System.Drawing.Color.White;
+            this.Btn_cancelar_anulado.Location = new System.Drawing.Point(6, 157);
+            this.Btn_cancelar_anulado.Name = "Btn_cancelar_anulado";
+            this.Btn_cancelar_anulado.Size = new System.Drawing.Size(220, 45);
+            this.Btn_cancelar_anulado.TabIndex = 40;
+            this.Btn_cancelar_anulado.Text = "Cancelar";
+            this.Btn_cancelar_anulado.UseVisualStyleBackColor = false;
+            this.Btn_cancelar_anulado.Click += new System.EventHandler(this.Btn_cancelar_anulado_Click);
+            // 
+            // Btn_confirmar_anulado
+            // 
+            this.Btn_confirmar_anulado.BackColor = System.Drawing.Color.Blue;
+            this.Btn_confirmar_anulado.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(246)))), ((int)(((byte)(245)))));
+            this.Btn_confirmar_anulado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_confirmar_anulado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_confirmar_anulado.ForeColor = System.Drawing.Color.White;
+            this.Btn_confirmar_anulado.Location = new System.Drawing.Point(290, 157);
+            this.Btn_confirmar_anulado.Name = "Btn_confirmar_anulado";
+            this.Btn_confirmar_anulado.Size = new System.Drawing.Size(220, 45);
+            this.Btn_confirmar_anulado.TabIndex = 41;
+            this.Btn_confirmar_anulado.Text = "Confirmar";
+            this.Btn_confirmar_anulado.UseVisualStyleBackColor = false;
+            this.Btn_confirmar_anulado.Click += new System.EventHandler(this.Btn_confirmar_anulado_Click);
             // 
             // Frm_Mesa_Abierta
             // 
@@ -1001,6 +1613,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_listado_sf)).EndInit();
             this.Pnl_pedido.ResumeLayout(false);
             this.Pnl_pedido.PerformLayout();
+            this.Pnl_busqueda_cl.ResumeLayout(false);
+            this.Pnl_busqueda_cl.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_2)).EndInit();
             this.Pnl_busqueda_pr.ResumeLayout(false);
             this.Pnl_busqueda_pr.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_1)).EndInit();
@@ -1011,6 +1626,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_detalle)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            this.Pnl_detalles_tickets.ResumeLayout(false);
+            this.Pnl_detalles_tickets.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_tickets)).EndInit();
+            this.Pnl_vizualizar_pedidos.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_detalle_ticket)).EndInit();
+            this.Pnl_observacion_anulado.ResumeLayout(false);
+            this.Pnl_observacion_anulado.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1054,7 +1684,7 @@
         private System.Windows.Forms.Button Btn_cancelar;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label Lbl_total;
-        private System.Windows.Forms.Button Btn_generarcomando;
+        private System.Windows.Forms.Button Btn_generarcomanda;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.FlowLayoutPanel Flp_listadoproductos;
         private System.Windows.Forms.Panel panel3;
@@ -1081,5 +1711,47 @@
         private System.Windows.Forms.TextBox Txt_buscar_pr;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Panel Pnl_busqueda_cl;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button Btn_retornar_cl;
+        private System.Windows.Forms.DataGridView Dgv_2;
+        private System.Windows.Forms.Button Btn_buscar_cl;
+        private System.Windows.Forms.TextBox Txt_buscar_cl;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox textBox3;
+        internal System.Windows.Forms.Label Lbl_codigo_me;
+        internal System.Windows.Forms.Label Lbl_codigo_tu;
+        internal System.Windows.Forms.Label Lbl_fecha_trabajo;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.Panel Pnl_detalles_tickets;
+        private System.Windows.Forms.Label Lbl_total_tickets;
+        private System.Windows.Forms.Button Btn_factura;
+        private System.Windows.Forms.Button Btn_boleta;
+        private System.Windows.Forms.Button Btn_dividir_precuenta;
+        private System.Windows.Forms.Button Btn_emitirdocumento;
+        private System.Windows.Forms.Button Btn_anularpedido;
+        private System.Windows.Forms.Panel Pnl_vizualizar_pedidos;
+        private System.Windows.Forms.DataGridView Dgv_tickets;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Column1;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.DataGridView Dgv_detalle_ticket;
+        private System.Windows.Forms.TextBox Txt_tickets_seleccionado;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox Txt_nrodocumento_detalle_tickets;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox Txt_cliente_detalle_tickets;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label Lbl_total_detalles_tickets;
+        private System.Windows.Forms.Button Btn_reimprimir_comanda;
+        private System.Windows.Forms.Panel Pnl_observacion_anulado;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Label Lbl_titulo_obsanulado_ti;
+        private System.Windows.Forms.Button Btn_confirmar_anulado;
+        private System.Windows.Forms.Button Btn_cancelar_anulado;
+        private System.Windows.Forms.TextBox Txt_obsanulado_ti;
     }
 }

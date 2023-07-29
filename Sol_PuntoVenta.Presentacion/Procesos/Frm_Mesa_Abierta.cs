@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,34 @@ namespace Sol_PuntoVenta.Presentacion.Procesos
 {
     public partial class Frm_Mesa_Abierta : Form
     {
+        #region "Mis variables"
+        int nCodigo_cl = 0;
+        #endregion
+        #region "Variables para generar Comandas"
+        public int X1Codigo_ti { get => x1Codigo_ti; set => x1Codigo_ti = value; }
+        public string X1Impresora { get => x1Impresora; set => x1Impresora = value; }
+        public string X1Descripcion_pv { get => x1Descripcion_pv; set => x1Descripcion_pv = value; }
+        public string X1Fecha_emision { get => x1Fecha_emision; set => x1Fecha_emision = value; }
+        public string X1Descripcion_tu { get => x1Descripcion_tu; set => x1Descripcion_tu = value; }
+        public string X1Nombre_us { get => x1Nombre_us; set => x1Nombre_us = value; }
+        public string X1Descripcion_ca { get => x1Descripcion_ca; set => x1Descripcion_ca = value; }
+        public string X1Descripcion_me { get => x1Descripcion_me; set => x1Descripcion_me = value; }
+        public string X1Cliente { get => x1Cliente; set => x1Cliente = value; }
+        public string X1Nrodocumento_cl { get => x1Nrodocumento_cl; set => x1Nrodocumento_cl = value; }
+        public string X1obsanulado_ti { get => X1obsanulado_ti; set => X1obsanulado_ti = value; }
+
+        private int x1Codigo_ti;
+        private string x1Impresora;
+        private string x1Descripcion_pv;
+        private string x1Fecha_emision;
+        private string x1Descripcion_tu;
+        private string x1Nombre_us;
+        private string x1Descripcion_ca;
+        private string x1Descripcion_me;
+        private string x1Cliente;
+        private string x1Nrodocumento_cl;
+        private string x1obsanulado_ti;
+        #endregion
         #region "Varibales y Propiedades"
         public int Codigo_pr1 { get => _Codigo_pr1; set => _Codigo_pr1 = value; }
         public string Descripcion_pr1 { get => _Descripcion_pr1; set => _Descripcion_pr1 = value; }
@@ -165,6 +194,228 @@ namespace Sol_PuntoVenta.Presentacion.Procesos
         }
 
         #endregion
+        #region "Metodo para busqueda rapida de Clientes"
+        private void Formato_busqueda_cl()
+        {
+            Dgv_2.Columns[0].Width = 50;
+            Dgv_2.Columns[0].HeaderText = "TIPO DOC.";
+            Dgv_2.Columns[1].Width = 100;
+            Dgv_2.Columns[1].HeaderText = "NRO. DOC.";
+            Dgv_2.Columns[2].Width = 283;
+            Dgv_2.Columns[2].HeaderText = "CLIENTE";
+            Dgv_2.Columns[3].Visible = false;
+        }
+
+        private void Busqueda_cl(string cTexto)
+        {
+            try
+            {
+                Dgv_2.DataSource = N_MesaAbierta.Busqueda_cl(cTexto);
+                this.Formato_busqueda_cl();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void Selecciona_dgv_busqueda_cl()
+        {
+            int bCodigo_cl;
+            Txt_cliente.Text = Convert.ToString(Dgv_2.CurrentRow.Cells["cliente"].Value);
+            Txt_nrodocumento.Text = Convert.ToString(Dgv_2.CurrentRow.Cells["nrodocumento_cl"].Value);
+            nCodigo_cl = Convert.ToInt32(Dgv_2.CurrentRow.Cells["codigo_cl"].Value);
+        }
+
+        #endregion
+        #region "Imprimir Comanda"
+        private void Imprimir(object sender, PrintPageEventArgs e)
+        {
+            DataTable TablaImprimir = new DataTable();
+            Font Font1 = new Font("Arial", 10, FontStyle.Regular, GraphicsUnit.Point);
+            Font Font2 = new Font("Arial", 8, FontStyle.Regular, GraphicsUnit.Point);
+            Font Font3 = new Font("Arial", 7, FontStyle.Regular, GraphicsUnit.Point);
+            int Ancho = 250;
+            int y = 20;
+
+            e.Graphics.DrawString("Comanda Ticket # " + x1Codigo_ti, Font1, Brushes.Black, new RectangleF(0,y+=20,Ancho,20));
+            e.Graphics.DrawString("Punto de Venta: " + X1Descripcion_pv, Font2, Brushes.Black, new RectangleF(0, y += 20, Ancho, 20));
+            e.Graphics.DrawString("Fecha emisión " + x1Fecha_emision, Font2, Brushes.Black, new RectangleF(0, y += 20, Ancho, 20));
+            e.Graphics.DrawString("Turno: " + x1Nombre_us, Font2, Brushes.Black, new RectangleF(0, y += 20, Ancho, 20));
+            e.Graphics.DrawString("Usuario: " + X1Descripcion_pv, Font2, Brushes.Black, new RectangleF(0, y += 20, Ancho, 20));
+            e.Graphics.DrawString("Cargo: " + X1Descripcion_ca, Font2, Brushes.Black, new RectangleF(0, y += 20, Ancho, 20));
+            e.Graphics.DrawString("Mesa # " + x1Fecha_emision, Font2, Brushes.Black, new RectangleF(0, y += 20, Ancho, 20));
+            e.Graphics.DrawString("Cliente: " + x1Cliente, Font2, Brushes.Black, new RectangleF(0, y += 20, Ancho, 20));
+            e.Graphics.DrawString("Nro. Doc.: " + X1Nrodocumento_cl, Font2, Brushes.Black, new RectangleF(0, y += 20, Ancho, 20));
+            e.Graphics.DrawString("-------- PRODUCTOS --------: ", Font2, Brushes.Black, new RectangleF(0, y += 30, Ancho, 20));
+            // Imprimir detalle de la comanda
+            TablaImprimir = N_MesaAbierta.Imprimir_comanda(x1Impresora, x1Codigo_ti);
+            for (int yFila = 0; yFila <= TablaImprimir.Rows.Count-1; yFila++)
+            {
+                e.Graphics.DrawString(Convert.ToString(TablaImprimir.Rows[yFila][0]) + " " +
+                                      Convert.ToString(TablaImprimir.Rows[yFila][1]),
+                                      Font3, Brushes.Black, new RectangleF(0, y += 20, Ancho, 20));
+                //Observacion por cada producto
+                string yObs = Convert.ToString(TablaImprimir.Rows[yFila][2]);
+                if (yObs.Length>0)
+                {
+                    e.Graphics.DrawString("    |->" + yObs, Font3, Brushes.Black, new RectangleF(0, y += 20, Ancho, 20));
+                }
+                // Fin de la observacion.
+            }
+            // fin de comanda por impresora.
+        }
+        private void Reimprimir(object sender, PrintPageEventArgs e)
+        {
+            DataTable TablaImprimir = new DataTable();
+            Font Font1 = new Font("Arial", 10, FontStyle.Regular, GraphicsUnit.Point);
+            Font Font2 = new Font("Arial", 8, FontStyle.Regular, GraphicsUnit.Point);
+            Font Font3 = new Font("Arial", 7, FontStyle.Regular, GraphicsUnit.Point);
+            int Ancho = 250;
+            int y = 20;
+
+            e.Graphics.DrawString("<REIMPRESION> ", Font1, Brushes.Black, new RectangleF(0, y += 20, Ancho, 20));
+            e.Graphics.DrawString("Comanda Ticket # " + x1Codigo_ti, Font1, Brushes.Black, new RectangleF(0, y += 20, Ancho, 20));
+            e.Graphics.DrawString("Punto de Venta: " + X1Descripcion_pv, Font2, Brushes.Black, new RectangleF(0, y += 20, Ancho, 20));
+            e.Graphics.DrawString("Fecha emisión " + x1Fecha_emision, Font2, Brushes.Black, new RectangleF(0, y += 20, Ancho, 20));
+            e.Graphics.DrawString("Turno: " + x1Nombre_us, Font2, Brushes.Black, new RectangleF(0, y += 20, Ancho, 20));
+            e.Graphics.DrawString("Usuario: " + X1Descripcion_pv, Font2, Brushes.Black, new RectangleF(0, y += 20, Ancho, 20));
+            e.Graphics.DrawString("Cargo: " + X1Descripcion_ca, Font2, Brushes.Black, new RectangleF(0, y += 20, Ancho, 20));
+            e.Graphics.DrawString("Mesa # " + x1Fecha_emision, Font2, Brushes.Black, new RectangleF(0, y += 20, Ancho, 20));
+            e.Graphics.DrawString("Cliente: " + x1Cliente, Font2, Brushes.Black, new RectangleF(0, y += 20, Ancho, 20));
+            e.Graphics.DrawString("Nro. Doc.: " + X1Nrodocumento_cl, Font2, Brushes.Black, new RectangleF(0, y += 20, Ancho, 20));
+            e.Graphics.DrawString("-------- PRODUCTOS --------: ", Font2, Brushes.Black, new RectangleF(0, y += 30, Ancho, 20));
+            // Imprimir detalle de la comanda
+            TablaImprimir = N_MesaAbierta.Imprimir_comanda(x1Impresora, x1Codigo_ti);
+            for (int yFila = 0; yFila <= TablaImprimir.Rows.Count - 1; yFila++)
+            {
+                e.Graphics.DrawString(Convert.ToString(TablaImprimir.Rows[yFila][0]) + " " +
+                                      Convert.ToString(TablaImprimir.Rows[yFila][1]),
+                                      Font3, Brushes.Black, new RectangleF(0, y += 20, Ancho, 20));
+                //Observacion por cada producto
+                string yObs = Convert.ToString(TablaImprimir.Rows[yFila][2]);
+                if (yObs.Length > 0)
+                {
+                    e.Graphics.DrawString("    |->" + yObs, Font3, Brushes.Black, new RectangleF(0, y += 20, Ancho, 20));
+                }
+                // Fin de la observacion.
+            }
+            // fin de comanda por impresora.
+        }
+        private void Reimprimir_anulado(object sender, PrintPageEventArgs e)
+        {
+            DataTable TablaImprimir = new DataTable();
+            Font Font1 = new Font("Arial", 10, FontStyle.Regular, GraphicsUnit.Point);
+            Font Font2 = new Font("Arial", 8, FontStyle.Regular, GraphicsUnit.Point);
+            Font Font3 = new Font("Arial", 7, FontStyle.Regular, GraphicsUnit.Point);
+            int Ancho = 250;
+            int y = 20;
+
+            e.Graphics.DrawString("<ANUlACIÓN DE CUENTA> ", Font1, Brushes.Black, new RectangleF(0, y += 20, Ancho, 20));
+            e.Graphics.DrawString("Comanda Ticket # " + x1Codigo_ti, Font1, Brushes.Black, new RectangleF(0, y += 20, Ancho, 20));
+            e.Graphics.DrawString("MOTIVO: " + x1obsanulado_ti, Font1, Brushes.Black, new RectangleF(0, y += 20, Ancho, 50));
+
+            e.Graphics.DrawString("Punto de Venta: " + X1Descripcion_pv, Font2, Brushes.Black, new RectangleF(0, y += 50, Ancho, 20));
+            e.Graphics.DrawString("Fecha emisión " + x1Fecha_emision, Font2, Brushes.Black, new RectangleF(0, y += 20, Ancho, 20));
+            e.Graphics.DrawString("Turno: " + x1Nombre_us, Font2, Brushes.Black, new RectangleF(0, y += 20, Ancho, 20));
+            e.Graphics.DrawString("Usuario: " + X1Descripcion_pv, Font2, Brushes.Black, new RectangleF(0, y += 20, Ancho, 20));
+            e.Graphics.DrawString("Cargo: " + X1Descripcion_ca, Font2, Brushes.Black, new RectangleF(0, y += 20, Ancho, 20));
+            e.Graphics.DrawString("Mesa # " + x1Fecha_emision, Font2, Brushes.Black, new RectangleF(0, y += 20, Ancho, 20));
+            e.Graphics.DrawString("Cliente: " + x1Cliente, Font2, Brushes.Black, new RectangleF(0, y += 20, Ancho, 20));
+            e.Graphics.DrawString("Nro. Doc.: " + X1Nrodocumento_cl, Font2, Brushes.Black, new RectangleF(0, y += 20, Ancho, 20));
+            e.Graphics.DrawString("-------- PRODUCTOS --------: ", Font2, Brushes.Black, new RectangleF(0, y += 30, Ancho, 20));
+            // Imprimir detalle de la comanda
+            TablaImprimir = N_MesaAbierta.Imprimir_comanda(x1Impresora, x1Codigo_ti);
+            for (int yFila = 0; yFila <= TablaImprimir.Rows.Count - 1; yFila++)
+            {
+                e.Graphics.DrawString(Convert.ToString(TablaImprimir.Rows[yFila][0]) + " " +
+                                      Convert.ToString(TablaImprimir.Rows[yFila][1]),
+                                      Font3, Brushes.Black, new RectangleF(0, y += 20, Ancho, 20));
+                //Observacion por cada producto
+                string yObs = Convert.ToString(TablaImprimir.Rows[yFila][2]);
+                if (yObs.Length > 0)
+                {
+                    e.Graphics.DrawString("    |->" + yObs, Font3, Brushes.Black, new RectangleF(0, y += 20, Ancho, 20));
+                }
+                // Fin de la observacion.
+            }
+            // fin de comanda por impresora.
+        }
+        #endregion
+        #region "Mostrar Tickets de la Mesa"
+        private void Formato_tickets()
+        {
+            Dgv_tickets.Columns[0].Width = 100;
+            Dgv_tickets.Columns[0].Visible = false;
+            Dgv_tickets.Columns[0].ReadOnly = true;
+            Dgv_tickets.Columns[1].Width = 70;
+            Dgv_tickets.Columns[1].ReadOnly = true;
+            Dgv_tickets.Columns[1].HeaderText = "CÓDIGO TI";
+            Dgv_tickets.Columns[2].Width = 240;
+            Dgv_tickets.Columns[2].ReadOnly = true;
+            Dgv_tickets.Columns[2].HeaderText = "CLIENTE";
+            Dgv_tickets.Columns[3].Width = 120;
+            Dgv_tickets.Columns[3].ReadOnly = true;
+            Dgv_tickets.Columns[3].HeaderText = "FECHA EMISIÓN";
+            Dgv_tickets.Columns[4].Width = 120;
+            Dgv_tickets.Columns[4].ReadOnly = true;
+            Dgv_tickets.Columns[4].HeaderText = "TOTAL S/.";
+            Dgv_tickets.Columns[5].Visible = false;
+            Dgv_tickets.Columns[6].Visible = false;
+        }
+
+        private void Mostrar_Tickets_Mesa()
+        {
+            try
+            {
+                Dgv_tickets.DataSource = N_MesaAbierta.Mostrar_Tickets_Mesa(Convert.ToInt32(Lbl_codigo_me.Text));
+                this.Formato_tickets();
+                Lbl_total_tickets.Text = "Total Nro. Tickets x mesa: " + Convert.ToString(Dgv_tickets.Rows.Count);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        #endregion
+        #region "Mostrar el detalle del ticket seleccionado"
+        private void Formato_detalle_ticket()
+        {
+            Dgv_detalle_ticket.Columns[0].Width = 280;
+            Dgv_detalle_ticket.Columns[0].HeaderText = "PRODUCTO";
+            Dgv_detalle_ticket.Columns[1].Width = 75;
+            Dgv_detalle_ticket.Columns[1].HeaderText = "P. UNIT.";
+            Dgv_detalle_ticket.Columns[2].Width = 75;
+            Dgv_detalle_ticket.Columns[2].HeaderText = "CANTIDAD";
+            Dgv_detalle_ticket.Columns[3].Width = 75;
+            Dgv_detalle_ticket.Columns[3].HeaderText = "TOTAL";
+            Dgv_detalle_ticket.Columns[4].Width = 40;
+            Dgv_detalle_ticket.Columns[4].HeaderText = "Obs.";
+            Dgv_detalle_ticket.Columns[5].Visible = false;
+            Dgv_detalle_ticket.Columns[6].Visible = false;
+            Dgv_detalle_ticket.Columns[7].Visible = false;
+        }
+
+        private void Selecciona_detalle_ticket()
+        {
+            if (string.IsNullOrEmpty(Convert.ToString(Dgv_tickets.CurrentRow.Cells["codigo_ti"].Value)))
+            {
+                MessageBox.Show("Seleccione un registro", "Aviso del sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                Pnl_detalles_tickets.Visible = true;
+                int xCodigo_ti = Convert.ToInt32(Dgv_tickets.CurrentRow.Cells["codigo_ti"].Value);
+                Txt_cliente_detalle_tickets.Text = Convert.ToString(Dgv_tickets.CurrentRow.Cells["Cliente"].Value);
+                Txt_nrodocumento_detalle_tickets.Text = Convert.ToString(Dgv_tickets.CurrentRow.Cells["nrodocumento_cl"].Value);
+                Txt_tickets_seleccionado.Text = Convert.ToString(Dgv_tickets.CurrentRow.Cells["codigo_ti"].Value);
+                Lbl_total_detalles_tickets.Text = Convert.ToString(Dgv_tickets.CurrentRow.Cells["total_ti"].Value);
+                Dgv_detalle_ticket.DataSource = N_MesaAbierta.Mostra_Ticket(xCodigo_ti);
+                this.Formato_detalle_ticket();
+            }
+        }
+        #endregion
         public Frm_Mesa_Abierta()
         {
             InitializeComponent();
@@ -197,6 +448,7 @@ namespace Sol_PuntoVenta.Presentacion.Procesos
 
         private void Btn_visualizarpedido_Click(object sender, EventArgs e)
         {
+            this.Mostrar_Tickets_Mesa();
             Tbc_principal.Controls["tabPage1"].Enabled = false;
             Tbc_principal.Controls["tabPage2"].Enabled = true;
             Tbc_principal.SelectedIndex = 1;
@@ -266,7 +518,7 @@ namespace Sol_PuntoVenta.Presentacion.Procesos
                 string xCodigo_pr;
                 string xImpresora;
                 StreamReader Leer = new StreamReader(@"C:\Users\Public\Documents\" + Lbl_archivo_txt.Text.Trim() + ".txt");
-
+                //ERROR!
                 xDescripcion_pr = Leer.ReadLine();
                 xPreciounitario_pr = Leer.ReadLine();
                 xCodigo_pr = Leer.ReadLine();
@@ -385,6 +637,279 @@ namespace Sol_PuntoVenta.Presentacion.Procesos
             // Pasar el producto seleccionado al detalle
             this.Selecciona_dgv_busqueda_pr();
             Pnl_busqueda_pr.Visible = false;
+        }
+
+        private void Btn_lupa_1_Click(object sender, EventArgs e)
+        {
+            Pnl_busqueda_cl.Location = Chk_manual.Location;
+            Pnl_busqueda_cl.Visible = true;
+        }
+
+        private void Btn_retornar_cl_Click(object sender, EventArgs e)
+        {
+            Pnl_busqueda_cl.Visible = false;
+        }
+
+        private void Btn_buscar_cl_Click(object sender, EventArgs e)
+        {
+            this.Busqueda_cl(Txt_buscar_cl.Text.Trim());
+        }
+
+        private void Dgv_2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.Selecciona_dgv_busqueda_cl();
+            Pnl_busqueda_cl.Visible = false;
+        }
+
+        private void Chk_manual_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Chk_manual.Checked == true)
+            {
+                Txt_cliente.ReadOnly = false;
+                Txt_nrodocumento.ReadOnly = false;
+                Txt_cliente.Focus();
+            }
+            else
+            {
+                nCodigo_cl = 0;
+                Txt_cliente.Text = "";
+                Txt_nrodocumento.Text = "";
+                Txt_cliente.ReadOnly = true;
+                Txt_nrodocumento.ReadOnly = true;
+            }
+        }
+
+        private void Btn_generarcomanda_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Txt_cliente.Text.Trim()== string.Empty || Lbl_total.Text.Trim()== String.Empty)
+                {
+                    MessageBox.Show("Falta ingresar datos requeriodos (*)", "Aviso del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else
+                {
+                    // pasaremos a desarrollar la comanda
+                    DataTable TablaImpresora = new DataTable();
+                    E_RegristroPedido oErp = new E_RegristroPedido();
+                    oErp.Fecha_emision = Lbl_fecha_trabajo.Text.Trim();
+                    oErp.Codigo_cl = this.nCodigo_cl;
+                    oErp.Nrodocumento_cl = Txt_nrodocumento.Text.Trim();
+                    oErp.Cliente = Txt_cliente.Text.Trim();
+                    oErp.Codigo_me = Convert.ToInt32(Lbl_codigo_me.Text);
+                    oErp.Total_ti = Convert.ToDecimal(Lbl_total.Text.Trim());
+                    oErp.Codigo_tu = Convert.ToInt32(Lbl_codigo_tu.Text);
+                    oErp.Codigo_us = 1;
+
+                    TablaDetalle.AcceptChanges();
+                    TablaImpresora = N_MesaAbierta.Guardar_RP(oErp, TablaDetalle);
+                    if (TablaImpresora.Rows.Count>0)
+                    {
+                        #region "Impresion de Comandas"
+                        // En esta posicion lanzamos la impresion de comandas a ticketeras
+                        for (int nFila = 0; nFila <= TablaImpresora.Rows.Count-1; nFila++)
+                        {
+                            x1Impresora = Convert.ToString(TablaImpresora.Rows[nFila][0]);
+                            x1Codigo_ti = Convert.ToInt32(TablaImpresora.Rows[nFila][1]);
+                            X1Descripcion_pv = Convert.ToString(TablaImpresora.Rows[nFila][3]);
+                            X1Fecha_emision = Convert.ToString(TablaImpresora.Rows[nFila][4]);
+                            X1Nombre_us = Convert.ToString(TablaImpresora.Rows[nFila][5]);
+                            X1Descripcion_ca = Convert.ToString(TablaImpresora.Rows[nFila][6]);
+                            x1Descripcion_me = Convert.ToString(TablaImpresora.Rows[nFila][7]);
+                            X1Cliente = Convert.ToString(TablaImpresora.Rows[nFila][8]);
+                            X1Nrodocumento_cl = Convert.ToString(TablaImpresora.Rows[nFila][9]);
+                            
+                            //Creacion del printcodument de la comanda
+                            printDocument1 = new PrintDocument();
+                            printDocument1.PrinterSettings.PrinterName = X1Impresora.Trim();
+                            printDocument1.PrintPage += Imprimir;
+                            printDocument1.Print();
+                        }
+                        // Fin de la imprecion de comanda
+                        #endregion
+                        MessageBox.Show("Pedido generado correctamente", "Aviso del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Txt_cliente.Text = "";
+                        Txt_nrodocumento.Text = "";
+                        Chk_manual.Checked = false;
+                        Lbl_cantidad.Text = "";
+                        Lbl_total.Text = "";
+                        TablaDetalle.Clear();
+                        TablaDetalle.AcceptChanges();
+                        this.timer1.Enabled = false;
+                        Tbc_principal.Controls["TabPage1"].Enabled = false;
+                        Tbc_principal.Controls["TabPage2"].Enabled = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Comanda no generada, verifique el detalle del pedido", "Aviso del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void Dgv_tickets_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            this.Selecciona_detalle_ticket();
+        }
+
+        private void Btn_reimprimir_comanda_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Se valida si tiene permisos de admistrador para realizar dicha tarea
+                int xCodigo_us = 1;
+                int xResp = 0;
+                DataTable TablaTemp_admin = new DataTable();
+                TablaTemp_admin = N_MesaAbierta.Usuario_Admin(xCodigo_us);
+                xResp = Convert.ToInt32(TablaTemp_admin.Rows[0][0]);
+                if (xResp==0)
+                {
+                    MessageBox.Show("El usuario no tiene permiso para ese proceso", "Aviso del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else
+                {
+                    // Comenzariamos a evaludar lo siguiente  para reimprimir comanda
+                    DataTable TablaImpresora = new DataTable();
+                    TablaImpresora = N_MesaAbierta.Reimprimir_comanda(Convert.ToInt32(Txt_tickets_seleccionado.Text));
+                    if (TablaImpresora.Rows.Count>0)
+                    {
+                        // En esta posicion lanzamos la impresion de comandas a las ticketeras
+                        for (int nFila = 0; nFila <= TablaImpresora.Rows.Count-1; nFila++)
+                        {
+                            X1Impresora = Convert.ToString(TablaImpresora.Rows[nFila][0]);
+                            x1Codigo_ti = Convert.ToInt32(TablaImpresora.Rows[nFila][1]);
+                            x1Descripcion_pv = Convert.ToString(TablaImpresora.Rows[nFila][2]);
+                            X1Fecha_emision = Convert.ToString(TablaImpresora.Rows[nFila][3]);
+                            X1Descripcion_tu = Convert.ToString(TablaImpresora.Rows[nFila][4]);
+                            X1Nombre_us = Convert.ToString(TablaImpresora.Rows[nFila][5]);
+                            x1Descripcion_ca = Convert.ToString(TablaImpresora.Rows[nFila][6]);
+                            x1Descripcion_me = Convert.ToString(TablaImpresora.Rows[nFila][7]);
+                            X1Cliente = Convert.ToString(TablaImpresora.Rows[nFila][8]);
+                            X1Nrodocumento_cl = Convert.ToString(TablaImpresora.Rows[nFila][9]);
+
+                            // Creacion del printdocument para la comanda
+                            printDocument1 = new PrintDocument();
+                            printDocument1.PrinterSettings.PrinterName = x1Impresora.Trim();
+                            printDocument1.PrintPage += Reimprimir;
+                            printDocument1.Print();
+                        }
+                        // Fin de la reinmpresion
+                        MessageBox.Show("Reimpresión de la comanda generada", "Aviso del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void Btn_anularpedido_Click(object sender, EventArgs e)
+        {
+            // Se valida si tiene permisos de admistrador para realizar dicha tarea
+            int aCodigo_us = 1;
+            int aResp = 0;
+            DataTable TablaTemp_admin = new DataTable();
+            TablaTemp_admin = N_MesaAbierta.Usuario_Admin(aCodigo_us);
+            aResp = Convert.ToInt32(TablaTemp_admin.Rows[0][0]);
+            if (aResp == 0)
+            {
+                MessageBox.Show("El usuario no tiene permiso para ese proceso", "Aviso del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else // Proceder ya que es usuario Administrador
+            {
+                int aCodigo_ti = Convert.ToInt32(Dgv_tickets.CurrentRow.Cells["codigo_ti"].Value);
+                Lbl_titulo_obsanulado_ti.Text = "Observacion de ticket anulado # " + aCodigo_ti;
+                Btn_reimprimir_comanda.Enabled = false;
+                Dgv_tickets.Enabled = false;
+                Btn_anularpedido.Enabled = false;
+                Btn_emitirdocumento.Enabled = false;
+                Btn_dividir_precuenta.Enabled = false;
+                Btn_boleta.Enabled = false;
+                Btn_factura.Enabled = false;
+                Pnl_observacion_anulado.Visible = true;
+            }
+        }
+
+        private void Btn_cancelar_anulado_Click(object sender, EventArgs e)
+        {
+            Pnl_observacion_anulado.Visible = false;
+            Btn_reimprimir_comanda.Enabled = true;
+            Dgv_tickets.Enabled = true;
+
+            Btn_anularpedido.Enabled = true;
+            Btn_emitirdocumento.Enabled = true;
+            Btn_dividir_precuenta.Enabled = true;
+            Btn_boleta.Enabled = true;
+            Btn_factura.Enabled = true;
+        }
+
+        private void Btn_confirmar_anulado_Click(object sender, EventArgs e)
+        {
+            if (Txt_obsanulado_ti.Text==string.Empty)
+            {
+                MessageBox.Show("Es necesario ingresar el motivo de anulación del ticket", "Aviso del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else // Procedemos a enviar los datos para anular el ticket seleccionado
+            {
+                string cRpta = "";
+                int aCodigo_ti = Convert.ToInt32(Dgv_tickets.CurrentRow.Cells["codigo_ti"].Value);
+                int aCodigo_me = Convert.ToInt32(Lbl_codigo_me.Text);
+                string cFechayHora = "  ::Fecha/Hora: " + DateTime.Now;
+                string cObs = Txt_obsanulado_ti.Text.Trim()+cFechayHora;
+                cRpta = N_MesaAbierta.Eliminar_ti(aCodigo_ti, aCodigo_me, cObs);
+                if (cRpta.Equals("OK"))
+                {
+                    // Iniciamos la previa para la impresión de la cuenta anulada
+                    DataTable TablaImpresora = new DataTable();
+                    TablaImpresora = N_MesaAbierta.Reimprimir_comanda(aCodigo_ti);
+                    if (TablaImpresora.Rows.Count>0)
+                    {
+                        // En esta posicion enviamos la reimpresion de comandas
+                        for (int nFila = 0; nFila <= TablaImpresora.Rows.Count-1; nFila++)
+                        {
+                            X1Impresora = Convert.ToString(TablaImpresora.Rows[nFila][0]);
+                            x1Codigo_ti = Convert.ToInt32(TablaImpresora.Rows[nFila][1]);
+                            X1Descripcion_pv = Convert.ToString(TablaImpresora.Rows[nFila][2]);
+                            x1Fecha_emision = Convert.ToString(TablaImpresora.Rows[nFila][3]);
+                            x1Descripcion_tu = Convert.ToString(TablaImpresora.Rows[nFila][4]);
+                            x1Nombre_us = Convert.ToString(TablaImpresora.Rows[nFila][5]);
+                            X1Descripcion_ca = Convert.ToString(TablaImpresora.Rows[nFila][6]);
+                            X1Descripcion_me = Convert.ToString(TablaImpresora.Rows[nFila][7]);
+                            x1Cliente = Convert.ToString(TablaImpresora.Rows[nFila][8]);
+                            x1Nrodocumento_cl = Convert.ToString(TablaImpresora.Rows[nFila][9]);
+                            x1obsanulado_ti = Convert.ToString(TablaImpresora.Rows[nFila][10]);
+                            x1obsanulado_ti = cObs;
+
+                            //Creacion de printdocument para la comanda
+                            printDocument1 = new PrintDocument();
+                            _ = printDocument1.PrinterSettings.IsDefaultPrinter;
+                            printDocument1.PrintPage += Reimprimir_anulado;
+                            printDocument1.Print();
+                            //Fin de la comanda anulada
+                        }
+                        this.Mostrar_Tickets_Mesa();
+                        Pnl_detalles_tickets.Visible = false;
+                        Pnl_observacion_anulado.Visible = false;
+                        Pnl_observacion_anulado.Visible = false;
+                        Btn_reimprimir_comanda.Enabled = true;
+                        Dgv_tickets.Enabled = true;
+
+                        Btn_anularpedido.Enabled = true;
+                        Btn_emitirdocumento.Enabled = true;
+                        Btn_dividir_precuenta.Enabled = true;
+                        Btn_boleta.Enabled = true;
+                        Btn_factura.Enabled = true;
+
+                        MessageBox.Show("Ticket anulado", "Aviso del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        Btn_anularpedido.Visible = false;
+                    }
+                }
+            }
         }
     }
 }

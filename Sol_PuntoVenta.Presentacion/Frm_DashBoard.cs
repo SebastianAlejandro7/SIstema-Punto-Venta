@@ -18,7 +18,14 @@ namespace Sol_PuntoVenta.Presentacion
 
         private IconButton currentBtn;
         private Panel leftBorderBtn;
-
+        #region "Mis Variables Principales del Sistema"
+        internal int pCodigo_us { get; set; }
+        internal string pLogin_us { get; set; }
+        internal string pNombres_us { get; set; }
+        internal string pDescripcion_ca { get; set; }
+        internal int pCodigo_ro { get; set; }
+        internal string pDescripcion_ro { get; set; }
+        #endregion
         public Frm_DashBoard()
         {
             InitializeComponent();
@@ -254,6 +261,12 @@ namespace Sol_PuntoVenta.Presentacion
         private void PR_gestionturnos_Click(object sender, EventArgs e)
         {
             OpenForm(new Procesos.Frm_Cierres_Turnos());
+        }
+
+        private void Frm_DashBoard_Load(object sender, EventArgs e)
+        {
+            Lbl_nombres_usuario.Text = "Usuario: " + pNombres_us;
+            Lbl_descripcion_ca.Text = "Cargo: " + pDescripcion_ca;
         }
     }
 }
