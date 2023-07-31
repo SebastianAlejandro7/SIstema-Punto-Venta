@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_DashBoard));
             this.Pnl_menu = new System.Windows.Forms.Panel();
-            this.iconButton7 = new FontAwesome.Sharp.IconButton();
+            this.BtnCerrarsesion = new FontAwesome.Sharp.IconButton();
             this.Pnl_datosmaestros = new System.Windows.Forms.Panel();
             this.DM_areadespacho = new FontAwesome.Sharp.IconButton();
             this.DM_mesas = new FontAwesome.Sharp.IconButton();
@@ -63,6 +63,10 @@
             this.IconoSeleccionado = new FontAwesome.Sharp.IconPictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.Pnl_barraestado = new System.Windows.Forms.Panel();
+            this.Lbl_descripcion_ca = new System.Windows.Forms.Label();
+            this.Pct_cargo = new System.Windows.Forms.PictureBox();
+            this.Lbl_nombres_usuario = new System.Windows.Forms.Label();
+            this.Pct_Usuario = new System.Windows.Forms.PictureBox();
             this.Grb_fechayhora = new System.Windows.Forms.GroupBox();
             this.Lbl_fecha = new System.Windows.Forms.Label();
             this.Lbl_hora = new System.Windows.Forms.Label();
@@ -72,10 +76,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.Pct_Usuario = new System.Windows.Forms.PictureBox();
-            this.Lbl_nombres_usuario = new System.Windows.Forms.Label();
-            this.Lbl_descripcion_ca = new System.Windows.Forms.Label();
-            this.Pct_cargo = new System.Windows.Forms.PictureBox();
             this.Pnl_menu.SuspendLayout();
             this.Pnl_datosmaestros.SuspendLayout();
             this.Pnl_reportes.SuspendLayout();
@@ -85,19 +85,19 @@
             this.Pnl_titulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IconoSeleccionado)).BeginInit();
             this.Pnl_barraestado.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Pct_cargo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pct_Usuario)).BeginInit();
             this.Grb_fechayhora.SuspendLayout();
             this.Pnl_contenido.SuspendLayout();
             this.Pnl_logosistema.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Pct_Usuario)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Pct_cargo)).BeginInit();
             this.SuspendLayout();
             // 
             // Pnl_menu
             // 
             this.Pnl_menu.AutoScroll = true;
             this.Pnl_menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(105)))), ((int)(((byte)(141)))));
-            this.Pnl_menu.Controls.Add(this.iconButton7);
+            this.Pnl_menu.Controls.Add(this.BtnCerrarsesion);
             this.Pnl_menu.Controls.Add(this.Pnl_datosmaestros);
             this.Pnl_menu.Controls.Add(this.Btn_datosmaestros);
             this.Pnl_menu.Controls.Add(this.Pnl_reportes);
@@ -112,26 +112,27 @@
             this.Pnl_menu.Size = new System.Drawing.Size(230, 741);
             this.Pnl_menu.TabIndex = 0;
             // 
-            // iconButton7
+            // BtnCerrarsesion
             // 
-            this.iconButton7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton7.FlatAppearance.BorderSize = 0;
-            this.iconButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton7.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton7.ForeColor = System.Drawing.Color.White;
-            this.iconButton7.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
-            this.iconButton7.IconColor = System.Drawing.Color.White;
-            this.iconButton7.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton7.IconSize = 32;
-            this.iconButton7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton7.Location = new System.Drawing.Point(0, 961);
-            this.iconButton7.Name = "iconButton7";
-            this.iconButton7.Size = new System.Drawing.Size(213, 44);
-            this.iconButton7.TabIndex = 6;
-            this.iconButton7.Text = "Cerrar Sesion";
-            this.iconButton7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton7.UseVisualStyleBackColor = true;
+            this.BtnCerrarsesion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnCerrarsesion.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnCerrarsesion.FlatAppearance.BorderSize = 0;
+            this.BtnCerrarsesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCerrarsesion.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCerrarsesion.ForeColor = System.Drawing.Color.White;
+            this.BtnCerrarsesion.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
+            this.BtnCerrarsesion.IconColor = System.Drawing.Color.White;
+            this.BtnCerrarsesion.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BtnCerrarsesion.IconSize = 32;
+            this.BtnCerrarsesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnCerrarsesion.Location = new System.Drawing.Point(0, 961);
+            this.BtnCerrarsesion.Name = "BtnCerrarsesion";
+            this.BtnCerrarsesion.Size = new System.Drawing.Size(213, 44);
+            this.BtnCerrarsesion.TabIndex = 6;
+            this.BtnCerrarsesion.Text = "Cerrar Sesion";
+            this.BtnCerrarsesion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnCerrarsesion.UseVisualStyleBackColor = true;
+            this.BtnCerrarsesion.Click += new System.EventHandler(this.BtnCerrarsesion_Click);
             // 
             // Pnl_datosmaestros
             // 
@@ -726,6 +727,46 @@
             this.Pnl_barraestado.Size = new System.Drawing.Size(1054, 90);
             this.Pnl_barraestado.TabIndex = 2;
             // 
+            // Lbl_descripcion_ca
+            // 
+            this.Lbl_descripcion_ca.AutoSize = true;
+            this.Lbl_descripcion_ca.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_descripcion_ca.Location = new System.Drawing.Point(51, 61);
+            this.Lbl_descripcion_ca.Name = "Lbl_descripcion_ca";
+            this.Lbl_descripcion_ca.Size = new System.Drawing.Size(43, 15);
+            this.Lbl_descripcion_ca.TabIndex = 4;
+            this.Lbl_descripcion_ca.Text = "Cargo:";
+            // 
+            // Pct_cargo
+            // 
+            this.Pct_cargo.Image = ((System.Drawing.Image)(resources.GetObject("Pct_cargo.Image")));
+            this.Pct_cargo.Location = new System.Drawing.Point(15, 54);
+            this.Pct_cargo.Name = "Pct_cargo";
+            this.Pct_cargo.Size = new System.Drawing.Size(30, 30);
+            this.Pct_cargo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Pct_cargo.TabIndex = 3;
+            this.Pct_cargo.TabStop = false;
+            // 
+            // Lbl_nombres_usuario
+            // 
+            this.Lbl_nombres_usuario.AutoSize = true;
+            this.Lbl_nombres_usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbl_nombres_usuario.Location = new System.Drawing.Point(51, 26);
+            this.Lbl_nombres_usuario.Name = "Lbl_nombres_usuario";
+            this.Lbl_nombres_usuario.Size = new System.Drawing.Size(53, 15);
+            this.Lbl_nombres_usuario.TabIndex = 2;
+            this.Lbl_nombres_usuario.Text = "Usuario:";
+            // 
+            // Pct_Usuario
+            // 
+            this.Pct_Usuario.Image = ((System.Drawing.Image)(resources.GetObject("Pct_Usuario.Image")));
+            this.Pct_Usuario.Location = new System.Drawing.Point(15, 18);
+            this.Pct_Usuario.Name = "Pct_Usuario";
+            this.Pct_Usuario.Size = new System.Drawing.Size(30, 30);
+            this.Pct_Usuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Pct_Usuario.TabIndex = 1;
+            this.Pct_Usuario.TabStop = false;
+            // 
             // Grb_fechayhora
             // 
             this.Grb_fechayhora.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -823,46 +864,6 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // Pct_Usuario
-            // 
-            this.Pct_Usuario.Image = ((System.Drawing.Image)(resources.GetObject("Pct_Usuario.Image")));
-            this.Pct_Usuario.Location = new System.Drawing.Point(15, 18);
-            this.Pct_Usuario.Name = "Pct_Usuario";
-            this.Pct_Usuario.Size = new System.Drawing.Size(30, 30);
-            this.Pct_Usuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Pct_Usuario.TabIndex = 1;
-            this.Pct_Usuario.TabStop = false;
-            // 
-            // Lbl_nombres_usuario
-            // 
-            this.Lbl_nombres_usuario.AutoSize = true;
-            this.Lbl_nombres_usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_nombres_usuario.Location = new System.Drawing.Point(51, 26);
-            this.Lbl_nombres_usuario.Name = "Lbl_nombres_usuario";
-            this.Lbl_nombres_usuario.Size = new System.Drawing.Size(53, 15);
-            this.Lbl_nombres_usuario.TabIndex = 2;
-            this.Lbl_nombres_usuario.Text = "Usuario:";
-            // 
-            // Lbl_descripcion_ca
-            // 
-            this.Lbl_descripcion_ca.AutoSize = true;
-            this.Lbl_descripcion_ca.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_descripcion_ca.Location = new System.Drawing.Point(51, 61);
-            this.Lbl_descripcion_ca.Name = "Lbl_descripcion_ca";
-            this.Lbl_descripcion_ca.Size = new System.Drawing.Size(43, 15);
-            this.Lbl_descripcion_ca.TabIndex = 4;
-            this.Lbl_descripcion_ca.Text = "Cargo:";
-            // 
-            // Pct_cargo
-            // 
-            this.Pct_cargo.Image = ((System.Drawing.Image)(resources.GetObject("Pct_cargo.Image")));
-            this.Pct_cargo.Location = new System.Drawing.Point(15, 54);
-            this.Pct_cargo.Name = "Pct_cargo";
-            this.Pct_cargo.Size = new System.Drawing.Size(30, 30);
-            this.Pct_cargo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Pct_cargo.TabIndex = 3;
-            this.Pct_cargo.TabStop = false;
-            // 
             // Frm_DashBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -887,12 +888,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.IconoSeleccionado)).EndInit();
             this.Pnl_barraestado.ResumeLayout(false);
             this.Pnl_barraestado.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Pct_cargo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pct_Usuario)).EndInit();
             this.Grb_fechayhora.ResumeLayout(false);
             this.Pnl_contenido.ResumeLayout(false);
             this.Pnl_logosistema.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Pct_Usuario)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Pct_cargo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -905,23 +906,19 @@
         private System.Windows.Forms.Panel Pnl_contenido;
         private System.Windows.Forms.Panel Pnl_logo;
         private System.Windows.Forms.PictureBox Pct_logo;
-        private FontAwesome.Sharp.IconButton Btn_Dashboard;
-        private FontAwesome.Sharp.IconButton Btn_procesos;
         private System.Windows.Forms.Panel Pnl_procesos;
         private FontAwesome.Sharp.IconButton PR_registrarpedido;
         private FontAwesome.Sharp.IconButton iconButton3;
         private FontAwesome.Sharp.IconButton PR_gestionturnos;
-        private FontAwesome.Sharp.IconButton Btn_reportes;
         private System.Windows.Forms.Panel Pnl_datosmaestros;
         private FontAwesome.Sharp.IconButton DM_medidas;
         private FontAwesome.Sharp.IconButton DM_marcas;
         private FontAwesome.Sharp.IconButton DM_productos;
-        private FontAwesome.Sharp.IconButton Btn_datosmaestros;
         private System.Windows.Forms.Panel Pnl_reportes;
         private FontAwesome.Sharp.IconButton iconButton5;
         private FontAwesome.Sharp.IconButton iconButton4;
         private FontAwesome.Sharp.IconButton iconButton6;
-        private FontAwesome.Sharp.IconButton iconButton7;
+        private FontAwesome.Sharp.IconButton BtnCerrarsesion;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox Grb_fechayhora;
         private System.Windows.Forms.Label Lbl_fecha;
@@ -945,5 +942,9 @@
         private System.Windows.Forms.PictureBox Pct_cargo;
         private System.Windows.Forms.Label Lbl_nombres_usuario;
         private System.Windows.Forms.PictureBox Pct_Usuario;
+        internal FontAwesome.Sharp.IconButton Btn_Dashboard;
+        internal FontAwesome.Sharp.IconButton Btn_procesos;
+        internal FontAwesome.Sharp.IconButton Btn_reportes;
+        internal FontAwesome.Sharp.IconButton Btn_datosmaestros;
     }
 }

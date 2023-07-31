@@ -35,6 +35,25 @@ namespace Sol_PuntoVenta.Presentacion
                     oFrm_DB.pCodigo_ro = Convert.ToInt32(TablaAcceder.Rows[0][4]);
                     oFrm_DB.pDescripcion_ro = Convert.ToString(TablaAcceder.Rows[0][5]);
                     oFrm_DB.Show();
+
+                    if (oFrm_DB.pCodigo_ro==1) // Usuario Administrador
+                    {
+                        oFrm_DB.Btn_Dashboard.Enabled = true;
+                        oFrm_DB.Btn_procesos.Enabled = true;
+                        oFrm_DB.Btn_reportes.Enabled = true;
+                        oFrm_DB.Btn_datosmaestros.Enabled = true;
+                    }
+                    else // Usuario generico
+                    {
+                        oFrm_DB.Btn_Dashboard.Enabled = false;
+                        oFrm_DB.Btn_procesos.Enabled = true;
+                        oFrm_DB.Btn_reportes.Enabled = false;
+                        oFrm_DB.Btn_datosmaestros.Enabled = false   ;
+                    }
+
+                    oFrm_DB.Show();
+                    oFrm_DB.FormClosed += Logout;
+                    this.Hide();
                 }
                 else
                 {
@@ -46,6 +65,15 @@ namespace Sol_PuntoVenta.Presentacion
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
         }
+
+        private void Logout(object sender, FormClosedEventArgs e)
+        {
+            Txt_login_us.Text = "";
+            Txt_Password_us.Text = "";
+            this.Show();
+            Txt_login_us.Select();
+        }
+
         #endregion
 
         private void Btn_acceder_Click(object sender, EventArgs e)

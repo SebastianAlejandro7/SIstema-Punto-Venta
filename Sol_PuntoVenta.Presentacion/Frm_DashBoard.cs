@@ -268,5 +268,15 @@ namespace Sol_PuntoVenta.Presentacion
             Lbl_nombres_usuario.Text = "Usuario: " + pNombres_us;
             Lbl_descripcion_ca.Text = "Cargo: " + pDescripcion_ca;
         }
+
+        private void BtnCerrarsesion_Click(object sender, EventArgs e)
+        {
+            DialogResult Opcion;
+            Opcion = MessageBox.Show("¿Desea cerrar sesión del Sistema?", "Sistema de Punto de Venta", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (Opcion == DialogResult.OK)
+            {
+                this.Close();
+            }
+        }
     }
 }
