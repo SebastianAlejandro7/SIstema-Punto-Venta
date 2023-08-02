@@ -51,7 +51,7 @@ namespace Sol_PuntoVenta.Presentacion
                         oFrm_DB.Btn_datosmaestros.Enabled = false   ;
                     }
 
-                    oFrm_DB.Show();
+                    oFrm_DB.Show(); // Check .Enabled = true;
                     oFrm_DB.FormClosed += Logout;
                     this.Hide();
                 }

@@ -14,7 +14,7 @@ namespace Sol_PuntoVenta.Presentacion.Controles
     public partial class MiProducto : UserControl
     {
         #region "Mis Variables y Propiedades"
-        public int Codigo_pr
+        public int Codigo_pr 
         {
             get { return Convert.ToInt32(Lbl_codigo_pr.Text); }//system.convert.toin32(string value)
             set { Lbl_codigo_pr.Text = Convert.ToString(value); }

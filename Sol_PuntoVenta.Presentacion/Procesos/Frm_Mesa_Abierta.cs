@@ -106,7 +106,7 @@ namespace Sol_PuntoVenta.Presentacion.Procesos
         {
             this.TablaDetalle = new DataTable("TablaDetalles");
             this.TablaDetalle.Columns.Add("Descripcion_pr", System.Type.GetType("System.String"));
-            this.TablaDetalle.Columns.Add("Preciounitario_pr1", System.Type.GetType("System.String"));
+            this.TablaDetalle.Columns.Add("Preciounitario_pr", System.Type.GetType("System.String"));
             this.TablaDetalle.Columns.Add("Cantidad", System.Type.GetType("System.String"));
             this.TablaDetalle.Columns.Add("Total", System.Type.GetType("System.String"));
             this.TablaDetalle.Columns.Add("Obs", System.Type.GetType("System.String"));
@@ -611,7 +611,7 @@ namespace Sol_PuntoVenta.Presentacion.Procesos
                     return;
                 }
                 nFila2.Cells["Obs"].Value = Txt_observacion.Text.Trim();
-                TablaDetalle.AcceptChanges();
+                TablaDetalle.AcceptChanges(); // Check
                 Pnl_observacion.Visible = false;
                 Dgv_detalle.Enabled = true;
             }
@@ -683,7 +683,7 @@ namespace Sol_PuntoVenta.Presentacion.Procesos
         {
             try
             {
-                if (Txt_cliente.Text.Trim()== string.Empty || Lbl_total.Text.Trim()== String.Empty)
+                if (Txt_cliente.Text.Trim()== string.Empty || Lbl_total.Text.Trim()== String.Empty) // Check
                 {
                     MessageBox.Show("Falta ingresar datos requeriodos (*)", "Aviso del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
@@ -837,8 +837,8 @@ namespace Sol_PuntoVenta.Presentacion.Procesos
 
         private void Btn_cancelar_anulado_Click(object sender, EventArgs e)
         {
-            Pnl_observacion_anulado.Visible = false;
-            Btn_reimprimir_comanda.Enabled = true;
+            Pnl_observacion_anulado.Visible = false; // 'false' hace que el panel desaparezca/invisible.
+            Btn_reimprimir_comanda.Enabled = true; // 'true' habilita el botón, lo que significa que se podrá interactuar con él.
             Dgv_tickets.Enabled = true;
 
             Btn_anularpedido.Enabled = true;
